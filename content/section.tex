@@ -428,10 +428,10 @@ s = \max\{s_n : n = 1, 2, \ldots, N\}
 
 \textbf{Theorem 6}. (\textit{Fixed set in metric space Hausdorff})
 
-Let \(\{w_n\}_{n=1}^N\) be an iterated function system with contractivity factor \(s\). Then the transformation \(W: \mathcal{H}(X) \rightarrow \mathcal{H}(X)\) defined by:
+Let $X; w_n, n = 1,2, \ldots, N$ be an iterated function system with contractivity factor \(s\). Then the transformation \(W: \mathcal{H}(X) \rightarrow \mathcal{H}(X)\) defined by:
 
 \[
-W(B) = \bigcup_{n=1}^N w_n(B) \quad \text{for all } B \in \mathcal{H}(X)
+W(B) = \bigcup_{n=1}^N w_n(B) \quad \forall B \in \mathcal{H}(X)
 \]
 
 is a contraction mapping on the complete metric space \(\mathcal{H}(X), h(d)\) with contractivity factor \(s\). Its unique fixed set, \(A \in \mathcal{H}(X)\), obeys:
@@ -444,6 +444,16 @@ A = W(A) = \bigcup_{n=1}^N w_n(A)
 A = \lim_{n \to \infty} W^n(B), \quad B \in \mathcal{H}(X)
 \]
 
+\textbf{Q: Ý nghĩa của tính chất này?}\\
+A: self-similarity (đặc tính tự tương tự)
+\begin{align*}
+    A = W(A)
+    &= \bigcup_{n=1}^N w_n(A)\\
+    &= \bigcup_{n=1}^N w_n(W(A))\\
+    &= \bigcup_{n=1}^N\bigcup_{n=1}^N (w_n w_n(A))\\
+\end{align*}
+$\rightarrow$ tính chất tự phân hình (tính chất fractal)
+
 \textbf{Theorem 7}. (\textit{Approximate fixed set in metric space Hausdorff})
 
 Let \(\{w_n\}_{n=1}^N\) be an iterated function system with contractivity factor \(s\). Then the transformation \(W: \mathcal{H}(X) \rightarrow \mathcal{H}(X)\) defined by:
@@ -452,7 +462,7 @@ Let \(\{w_n\}_{n=1}^N\) be an iterated function system with contractivity factor
 W(B) = \bigcup_{n=1}^N w_n(B) \quad \text{for all } B \in \mathcal{H}(X)
 \]
 
-\(A \in \mathcal{H}(X)\) is a fixed set approximated by:
+\(A \in \mathcal{H}(X)\) is a fixed set approximated (A không bao giờ có giá trị chính xác mà chỉ có giá trị xấp xỉ) by:
 
 \[
 h(W^n(B), A) \leq \frac{s^n}{1 - s} h(B, W(B)) \quad \forall B \in \mathcal{H}(X)
@@ -601,9 +611,187 @@ HOHUI Quốc Ngpo 12023
 
 
 \subsection{Lecture 3. Apply metric space to VDA}
+\subsubsection {Drawing based on Fractal geometry}
+\textbf{3.1.1}. Computing Fractals from Iterated Function Systems
+
+Consider IFS \{ $\mathbb{R}^2$, $w_n$: $n = 1, 2, \ldots, N$ \}
+
+\begin{equation*}
+    w_i 
+    \begin{bmatrix}
+    x_1\\
+    x_2
+    \end{bmatrix}
+    = 
+    \begin{bmatrix}
+    a_i & b_i\\
+    c_i & d_i
+    \end{bmatrix}
+    \begin{bmatrix}
+    x_1\\
+    x_2
+    \end{bmatrix}
+    +
+    \begin{bmatrix}
+    e_i\\
+    f_i
+    \end{bmatrix}
+    A_i x + t_i
+\end{equation*}
+
+$p_i$ associated with $w_i$
+
+$p_i \approx \frac{|\det A_i|}{\sum_{i=1}^N |\det A_i|}$
+
+$N = \sum_{i=1}^N \det A_i = \sum_{i=1}^N (a_i d_i - b_i c_i)$
+
+\textbf{3.1.} Drawing based on Fractal geometry
+
+\textbf{Deterministic Algorithm}
+
+Let, be an IFS,
+
+Compute directly a sequence of sets,
+
+starting from an initial set $A \subseteq \mathbb{R}^2$
+
+$A_{n+1} = \bigcup_{j=1}^N w_j(A_n)$, $n = 1, 2, \ldots$
+
+Sequence $\{A_n\}$ converges to the attractor $A$ of the IFS in the Hausdorff metric.
 
 
+\textbf{3.1.} Drawing based on Fractal geometry
 
+\textbf{Deterministic Algorithm}
+
+1. Initialize $s[M,M]$, $t[M,M]$
+
+2. Setup the values of IFS
+
+$a[1]=0.5; b[1]=0; c[1]=0; d[1]=0.5; e[1]=1; f[1]=1$
+
+$a[2]=0.5; b[2]=0; c[2]=0; d[2]=0.5; e[2]=50; f[2]=1$
+
+$a[3]=0.5; b[3]=0; c[3]=0; d[3]=0.5; e[3]=50; f[3]=50$
+
+3. Input the initial set $A(0)$ into $t[M,M]$
+
+4. Repeat
+
+5. For $i=1$ to $M$ /Apply $W$ to $A(n)$ to make $A(n+1)$ in $s[i,j]$/
+
+6. For $j=1$ to $M$
+
+7. If $t[i,j]=1$ then
+
+8. $s[a[1]*i+b[1]*j+e[1], c[1]*i+d[1]*j+f[1]]=1$
+
+$s[a[2]*i+b[2]*j+e[2], c[2]*i+d[2]*j+f[2]]=1$
+
+9. $s[a[3]*i+b[3]*j+e[3], c[3]*i+d[3]*j+f[3]]=1$
+
+10. End if
+
+11. End /for $j$/
+
+12. End /for $i$/
+
+PGS.TS. Lý Quốc Ngọc
+
+\textbf{3.1.} Drawing based on Fractal geometry
+
+\textbf{Deterministic Algorithm}
+
+13. For $i=1$ to $M$
+
+14. For $j=1$ to $M$
+
+15. $t[i,j]=s[i,j]$ /Put $A(n+1)$ into the array $t[i,j]$/
+
+16. $s[i,j] =0$ /Reset the array $s[i,j]$ to 0/
+
+17. If $t[i,j]=1$ then
+
+18. setpixel($i,j$) /Plot $A(n+1)$/
+
+19. End if
+
+20. End /for $j$/
+
+21. End /for $i$/
+
+22. Until $A(n+1)=W(A(n+1))$
+
+PGS.TS. Lý Quốc Ngọc
+
+\textbf{3.1.} Drawing based on Fractal geometry
+
+\textbf{Random Iteration Algorithm}
+
+Let be an IFS, where has been $1, 2, \ldots, N$ assigned to $i$, $\sum p_i = 1$
+
+Choose $x \in X$ and then choose recursively, independently,
+
+$x_n \in \{ w_1(x_{n-1}), w_2(x_{n-1}), \ldots, w_N(x_{n-1}) \}$, $n = 1, 2, 3, \ldots$
+
+Where the probability of the event $x_n = w_i(x_{n-1})$ is $p_i$
+
+Sequence $\{x_n\}$ be constructed converges to the attractor of
+
+the IFS.
+
+PGS.TS. Lý Quốc Ngọc
+
+\textbf{3.1.} Drawing based on Fractal geometry
+
+\textbf{Random Iteration Algorithm}
+
+1. Initialize $s[M,M]$, $t[M,M]$
+
+2. Setup the values of IFS
+
+$a[1]=0.5; b[1]=0; c[1]=0; d[1]=0.5; e[1]=1; f[1]=1$
+
+$a[2]=0.5; b[2]=0; c[2]=0; d[2]=0.5; e[2]=50; f[2]=1$
+
+$a[3]=0.5; b[3]=0; c[3]=0; d[3]=0.5; e[3]=50; f[3]=50$
+
+3. $x=0; y=0; numits=N$ /Initialize $(x,y)$ and the number of iterations/
+
+4. For $n=1$ to $numits$ /Random Iteration/
+
+5. $k=\text{int}(3*\text{rnd}-0.0001)+1$ /Choose one of the numbers 1,2,3/
+
+6. $newx=a[k]*x+b[k]*y+e[k];$
+
+7. $newy=c[k]*x+d[k]*y+f[k];$
+
+8. $x= newx;$
+
+9. $y=newy;$
+
+10. setpixel($x,y$);
+
+11. End /for $n$/
+
+
+\subsection {Fractal image compression}
+
+\textbf{Method}
+
+Based on theorem of contraction mapping sequence in
+
+metric space Hausdorff
+
+Let the Original image be $O$
+
+The compression image will be $\{ w_n \}$
+
+The ideal uncompressed will be $A$
+
+The real uncompressed be $W(B)$
+
+PGS.TS. Lý Quốc Ngọc
 
 
 
@@ -612,32 +800,32 @@ HOHUI Quốc Ngpo 12023
 
 
 \section{Chapter 3. Vector Space}
-\subsection{3.1. The role of vector space in VDA}
-\subsection{3.2. The basic concepts in vector space}
-\subsection{3.3. Applications of vector space in VDA}
+\subsection{The role of vector space in VDA}
+\subsection{The basic concepts in vector space}
+\subsection{Applications of vector space in VDA}
 
 \section{Chapter 4. Optimization Method}
-\subsection{4.1. The role of optimization method in VDA}
-\subsection{4.2. Unconstrained optimization method}
-\subsection{4.3. Constrained optimization method}
-\subsection{4.4. Applications of optimization method in VDA}
+\subsection{The role of optimization method in VDA}
+\subsection{Unconstrained optimization method}
+\subsection{Constrained optimization method}
+\subsection{Applications of optimization method in VDA}
 
 \section{Chapter 5. Method of Solving a System of Equations}
-\subsection{5.1. The role of system of equations in VDA}
-\subsection{5.2. Method of solving system of linear equations}
-\subsection{5.3. Method of solving system of non-linear equations}
-\subsection{5.4. Applications of system of equations in VDA}
+\subsection{The role of system of equations in VDA}
+\subsection{Method of solving system of linear equations}
+\subsection{Method of solving system of non-linear equations}
+\subsection{Applications of system of equations in VDA}
 
 \section{Chapter 6. Method of Solving Partial Differential Equations}
-\subsection{6.1. The role of PDE in VDA}
-\subsection{6.2. Method of solving PDE}
-\subsection{6.3. Applications of PDE in VDA}
+\subsection{The role of PDE in VDA}
+\subsection{Method of solving PDE}
+\subsection{Applications of PDE in VDA}
 
 \section{Chapter 7. Deep Learning}
-\subsection{7.1. The role of DL in VDA}
-\subsection{7.2. 2D and 3D Deep Convolution Neural Network}
-\subsection{7.3. Deep Recurrent Neural Network}
-\subsection{7.4. Applications of DL in VDA}
+\subsection{The role of DL in VDA}
+\subsection{2D and 3D Deep Convolution Neural Network}
+\subsection{Deep Recurrent Neural Network}
+\subsection{Applications of DL in VDA}
 
 \end{document}
 
