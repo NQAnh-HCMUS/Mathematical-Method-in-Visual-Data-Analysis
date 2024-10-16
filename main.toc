@@ -1,0 +1,46 @@
+\contentsline {section}{\numberline {1}Lecture 1. Introduction to Mathematical Method in VDA}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Intelligent Vision System}{1}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}The concept of Intelligence}{1}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}The intelligence levels of Vision System's output}{1}{subsubsection.1.1.2}%
+\contentsline {subsubsection}{\numberline {1.1.3}The three basic levels of Vision Systems:}{1}{subsubsection.1.1.3}%
+\contentsline {subsubsection}{\numberline {1.1.4}Some Intelligent Vision Systems}{1}{subsubsection.1.1.4}%
+\contentsline {subsubsection}{\numberline {1.1.5}Learning Method}{2}{subsubsection.1.1.5}%
+\contentsline {subsubsection}{\numberline {1.1.6}Diffusion Model}{4}{subsubsection.1.1.6}%
+\contentsline {subsection}{\numberline {1.2}Vision-Language Pre-trained Model}{7}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Vision-Language Pre-trained}{7}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}Text-Image Tasks}{7}{subsubsection.1.2.2}%
+\contentsline {section}{\numberline {2}Lecture 2. Metric Space}{8}{section.2}%
+\contentsline {subsection}{\numberline {2.1}The Role of Metric Space in VDA}{8}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}The Basic Concepts in Metric Space}{8}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Metric Space}{8}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Cauchy sequences}{8}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}Convergent sequence}{8}{subsubsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.4}Complete Metric Space}{9}{subsubsection.2.2.4}%
+\contentsline {subsubsection}{\numberline {2.2.5}Metric space Hausdorff}{9}{subsubsection.2.2.5}%
+\contentsline {subsubsection}{\numberline {2.2.6}Contraction mapping and fixed point}{10}{subsubsection.2.2.6}%
+\contentsline {subsubsection}{\numberline {2.2.7}Contraction mapping on metric space Hausdorff}{10}{subsubsection.2.2.7}%
+\contentsline {subsection}{\numberline {2.3}Applications of Metric Space in VDA}{12}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Lecture 3. Apply metric space to VDA}{16}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Chapter 3. Vector Space}{16}{section.3}%
+\contentsline {subsection}{\numberline {3.1}3.1. The role of vector space in VDA}{16}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}3.2. The basic concepts in vector space}{16}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}3.3. Applications of vector space in VDA}{16}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Chapter 4. Optimization Method}{16}{section.4}%
+\contentsline {subsection}{\numberline {4.1}4.1. The role of optimization method in VDA}{16}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}4.2. Unconstrained optimization method}{16}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}4.3. Constrained optimization method}{16}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}4.4. Applications of optimization method in VDA}{16}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Chapter 5. Method of Solving a System of Equations}{16}{section.5}%
+\contentsline {subsection}{\numberline {5.1}5.1. The role of system of equations in VDA}{16}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}5.2. Method of solving system of linear equations}{16}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}5.3. Method of solving system of non-linear equations}{16}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}5.4. Applications of system of equations in VDA}{16}{subsection.5.4}%
+\contentsline {section}{\numberline {6}Chapter 6. Method of Solving Partial Differential Equations}{16}{section.6}%
+\contentsline {subsection}{\numberline {6.1}6.1. The role of PDE in VDA}{16}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}6.2. Method of solving PDE}{16}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}6.3. Applications of PDE in VDA}{16}{subsection.6.3}%
+\contentsline {section}{\numberline {7}Chapter 7. Deep Learning}{16}{section.7}%
+\contentsline {subsection}{\numberline {7.1}7.1. The role of DL in VDA}{16}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}7.2. 2D and 3D Deep Convolution Neural Network}{16}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}7.3. Deep Recurrent Neural Network}{16}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}7.4. Applications of DL in VDA}{16}{subsection.7.4}%

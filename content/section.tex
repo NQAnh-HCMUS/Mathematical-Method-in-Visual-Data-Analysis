@@ -1,0 +1,755 @@
+\section{Lecture 1. Introduction to Mathematical Method in VDA}
+
+
+Introduction
+
+the fourth industrial revolution
+computer vision 
+
+
+
+\subsection{Intelligent Vision System}
+    \subsubsection{The concept of Intelligence}
+        Some indications of intelligence that are of interest include:
+        \begin{itemize}
+            \item memory, recall, creativity
+            \item computation, inference, recognition, prediction
+            \item retrieval, localization \& moving, reasoning
+        \end{itemize}
+    \subsubsection{The intelligence levels of Vision System's output}
+    \subsubsection{The three basic levels of Vision Systems:}
+    \begin{itemize}
+        \item Basic methods for data processing\\
+        \textbf{Q: Những khám phá nào ở cấp độ 1 mà làm thay đổi ngoạn mục cấp độ 2 và 3?}\\
+        A: Fast Fourier Transform (FFT) and Convolutional Neural Network (CNN).
+        \item Single task processing
+        \item Complex applications processing. 
+    \end{itemize}
+    \subsubsection{Some Intelligent Vision Systems}
+    \begin{itemize}
+        \item Intelligent Transportation System (ITS)
+        \item Intelligent Monitor System (IMS)
+        \item Autonomous Vehicle System (AVS)
+        \item Fault Inspection System (FIS)
+        \item Disease Diagnosis System based on Imaging
+        \item Harvesting System in Agriculture
+        \item Intelligent Image-Video Retrieval
+    \end{itemize}
+    \subsubsection{Learning Method}
+    Everything advances slowly 
+    Ngta sẽ nghiên cứu các mô hình học máy để cải tiến hơn nữa.
+    \begin{itemize}
+        \item Supervised learning (semi-, self-)
+        \item Unsupervised learning
+        \item Reinforcement learning: học tăng cường, nổi lên thông qua AlphaGo, bây giờ ứng dụng trong xe tự hành, ChatGPT,...
+        RL is a machine learning technique that focouses on training and algorithm following the cut-and-try approach. The algotirithm 
+        \begin{itemize}
+            \item The agent or the learner
+            \item The environment
+        \end{itemize}
+        Examples:
+        \begin{itemize}
+            \item any real-world problem where an agent must interact with an uncertain environment to meet a specific goal: robotics, AlphaGo, autonomous driving, logistics,...
+        \end{itemize}
+        Benefits:
+        \begin{itemize}
+            \item Artificial General Intelligence (AGI)
+            \item does not need a separate data collection step
+        \end{itemize}
+        \item Continual learning: học
+        \item Federated learning
+        \item Deep learning
+        \item Transfer learning
+        \item Meta learning
+        Deep neural networks can achieve great succes when presented wiht large datasets and sufficient computational resources. However, their ability to learn new concepts quickly is limited. It is one of the defining aspects of human intelligence (Jankowski, 2018).\\
+        Meta learning is one approach to this issue by enabling the network to learn how to learn.\\
+        \begin{itemize}
+            \item Image Classification
+            \item Facial Recognition and Face Antispoofing
+            \item Person-specific talking head generateion for unseen 
+        \end{itemize}
+    \end{itemize}
+
+    Traditional Programming
+    data
+            -> computer -> results
+    set of rules (proram)
+        
+    Machine Learning
+    data
+            -> computer -> set of rules (model)
+    results (Optional)
+\\
+    Machine learning as a field is "concerned with the question of how to construct computer programs that automatically improve with experience." - Tom Mitchell
+    1997 he presents the formal definition of machine learning as follows:\\
+    "A computer program is said to learn from \textbf{experience E} with respect to some \textbf{class of tasks T} and \textbf{performance measure P}, if its performance at tasks in T, as measured by P, improves with experience E."\\
+    There are three main machine learning paradigms:
+    \begin{itemize}
+        \item Supervised learning: learning properties of data using labelled data
+        \item Unsupervised learning: learning properties of data using unlabelled data
+        \item Reinforcement learning: learning properties of an environment through trial and error 
+    \end{itemize}
+
+
+
+
+learning Method
+
+
+advanced deep neural network system
+advanced deep neural network architecture
+\begin{itemize}
+    \item Le-Net, AlexNet, VGG, GoogleNet
+    \item ResNet, SeNet, EfficientNet
+    \item Graph Neural Network (GNN)
+    \item Generative Adversarial Network (GAN)
+    \item Vision Transformer (ViT)
+\end{itemize}
+
+\textbf{Q: Có mạng học máy nào mới gần đây không?}
+A: 
+
+
+
+
+generative AI 
+Generative AI in Computer Vision
+\begin{itemize}
+    \item Generative model
+    \begin{itemize}
+        \item GAN
+        \item DIFFUSION
+    \end{itemize}
+    \item Image-tasks
+    \begin{itemize}
+        \item Text2Image, Image2Text
+        \item Style2Image
+        \item HumanBrainSignal2Image
+    \end{itemize}
+    \item Video-tasks
+    \begin{itemize}
+        \item Text2Video, Video2Text
+        \item Text2Animation
+    \end{itemize}
+    \item Computer Graphics-tanks
+    \begin{itemize}
+        \item Text23DScene
+        \item Text23DObjectAnimation
+    \end{itemize}
+\end{itemize}
+\textbf{Q: Ví dụ về lĩnh vực, chủ đề mà Generative AI có thể hỗ trợ, không có không được}
+A: Image2Text (e.g. tóm tắt video)
+
+
+
+\subsubsection{Diffusion Model}
+
+
+"Diffusion Models are a class of probabilistic generative models that turn noise to a representative data sample."
+
+Using Diffusion models, we can generate images either conditionally or unconditionally.
+
+1. Unconditional image generation simply means that the model converts noise into any "random representative data sample." The generation process is not controlled or guided, and the model can generate an image of any nature.
+
+
+\textbf{Q: Nếu như đánh context "flamingos standing on water, red sunset, pink-red water reflection" thì máy có generate được hình ảnh khác không?}
+A: 
+
+
+\textbf{Q: mỗi lần tôi gõ cùng một câu thì nó ra một kết quả khác nhau hay giống nhau?}
+A: tuỳ vào model
+
+
+\textbf{Q: Nếu Intelligence System chỉ dừng ở mức thông minh mà không phải ở mức thông tuệ thì sẽ dừng ở lĩnh vực nào?}
+A: 
+
+
+
+
+
+Generative AI in Computer Vision
+
+Diffusion Model
+
+An idea used in non-equilibrium statistical physics is that we can gradually convert one distribution into another. In 2015, Sohl-Dicktein et al., inspired by this, created "Diffusion Probabilistic models" or "Diffusion models" in short, building on this essential idea.
+
+They build - "A generative Markov chain which converts a simple known distribution (e.g., a Gaussian) into a target (data) distribution using a diffusion process."
+
+X
+
+P(X-1)
+
+X-1
+
+(x-1)
+
+Illustration of Forward and Backward/Reverse Diffusion process
+
+Fit Introduction to Diffusion Models for Image Generation - A Comprehensive Guide (learnopencv.com)
+
+212
+
+53
+
+121
+
+
+
+Generative AI in Computer Vision
+
+Diffusion Model
+
+In 2015, Sohl-Dickstein et al. published paper "Deep Unsupervised Learning using Nonequilibrium Thermodynamics" and Diffusion models in deep learning were first introduced.
+
+In 2019, Song et al. published a paper, "Generative Modeling by Estimating Gradients of the Data Distribution," using the same principle but a different approach.
+
+In 2020, Ho et al. published the paper, now-popular "Denoising Diffusion Probabilistic Models" (DDPM for short).
+
+After 2020, research in diffusion models took off. Much progress has been made in creating, training, and improving diffusion-based generative modeling in a relatively short time.
+
+
+
+
+
+Generative AI in Computer Vision
+
+Diffusion Model
+
+Some of the Diffusion-based Image Generation models that became famous over the past few months.
+
+Som typical famous Diffusion-based Image Generation models include:
+
+• Dall-E 2 by OpenAl
+
+• Imagen by Google
+
+• Stable Diffusion by StabilityAl
+
+Midjourney
+
+
+
+
+
+
+
+Generative AI in Computer Vision
+
+Generative Model
+
+D and G play the following two-player minimax game with value function V (G, D):
+
+Min Max V(D,G) = Ex-pan [logD(x)] + E-P(z) [log(1-D(G(z)))]
+
+Discriminator output for real data x
+
+Discriminator output for generated fake data G(z)
+
+Min Max V(D,G) = Ex-Plate [logD(x)] + Ez-P2(2) [log(1 – D(G(z)))] G
+
+Error from the discriminator model training
+
+Error from the combined model training
+
+
+
+
+
+
+
+
+Explainable Al inComputer Vision
+
+Role of XAI in Computer Vision
+
+The absence of explicability and transparency in certain areas is not invariably a problem since state- of-the-art models have an extremely high accuracy.
+
+However, in areas such as autonomous cars, financial transactions and mainly medical applications, failures are unacceptable, considering that erroneous decisions can have disastrous con-sequences, such as the loss of human lives. Due to this fact, these application areas have extreme interest in explaining and interpreting each decision made by deep learning models.
+
+It is possible to use Explaining Artifcial Intelligence to improve deep learning models performance.
+
+
+
+
+
+
+
+\subsection{Vision-Language Pre-trained Model}
+\subsubsection{Vision-Language Pre-trained}
+\textbf{Why is the Vision-Language Pre-trained Model necessary?}
+
+Most visual recognition studies rely heavily on crowd-labelled data in deep neural networks (DNNs) training, and they usually train a DNN for each single visual recognition task, leading to a laborious and time-consuming visual recognition paradigm.\\
+
+To address the two challenges, Vision-Language Models (VLMs) have been intensively investigated recently, which learns rich vision-language correlation from web-scale image-text pairs that are almost infinitely available on the Internet and enables zero-shot predictions on various visual recognition tasks with a single VLM.
+
+\subsubsection{Text-Image Tasks}
+\textbf{Model Architecture}
+
+Given an image-text pair, a VL model first extracts text features w = {W1, , WN} and visual features v = (V1, VM) via a text encoder and a vision encoder, respectively. Here, N is the number of tokens in a sentence, and M is the number of visual features for an image, which can be the number of image regions/grids/patches, depending on the specific vision encoder being used. The text and visual features are then fed into a multimodal fusion module to produce cross-modal representations, which are then optionally fed into a decoder before generating the final outputs.
+
+
+
+
+
+Core VisionTasks
+
+
+
+
+
+
+
+
+\textbf{Q: }
+A: 
+
+
+
+
+
+
+
+
+
+
+
+Dataset for VLM
+
+\section{Lecture 2. Metric Space}
+
+\subsection{The Role of Metric Space in VDA}
+
+\subsection{The Basic Concepts in Metric Space}
+
+
+
+\subsubsection{Metric Space}
+
+Metric space $(X, d)$ is space $(X)$ together with a real-valued function \(d\), \(d: X \times X \rightarrow \mathbb{R}\), which measures the distance between pairs of points \(x\) and \(y\) in \(X\).\\
+ \(d\) obeys the following axioms:
+
+\begin{itemize}
+    \item[(i)] \(0 < d(x, y) < \infty \quad \forall x, y \in X, x \neq y\)
+    \item[(ii)] \(d(x, x) = 0 \quad \forall x \in X\)
+    \item[(iii)] \(d(x, y) = d(y, x) \quad \forall x, y \in X\)
+    \item[(iv)] \(d(x, y) \leq d(x, z) + d(z, y) \quad \forall x, y, z \in X\)
+\end{itemize}
+
+Such a function \(d\) is called a metric.
+
+\subsubsection{Cauchy sequences}
+
+A sequence of points \(\{x_n\}_{n=1}^\infty\) in a metric space \(X, d\) is called a Cauchy sequence if:
+
+\[
+\forall \epsilon > 0, \exists N > 0 \text{ such that } d(x_n, x_m) < \epsilon \quad \forall n, m > N
+\]
+
+\subsubsection{Convergent sequence}
+
+A sequence of points \(\{x_n\}_{n=1}^\infty\) is said to converge to a point \(x \in X\) in metric space \(X, d\) if:
+
+\[
+\forall \epsilon > 0, \exists N > 0 \text{ so that } d(x_n, x) < \epsilon \quad \forall n > N
+\]
+
+\(x \in X\), to which the sequence converges, is called the limit of the sequence, and we use the notation:
+
+\[
+x = \lim_{n \to \infty} x_n
+\]
+
+\subsubsection{Complete Metric Space}
+
+\textbf{Theorem 1}. (\textit{Convergent sequence \& Cauchy sequence})
+
+A sequence of points \(\{x_n\}_{n=1}^\infty\) in metric space \(X, d\) converges to a point \(x \in X\), then \(\{x_n\}_{n=1}^\infty\) is a Cauchy sequence.
+
+\textbf{Definition 4}. (\textit{Complete metric space})
+
+A metric space \(X, d\) is complete if every Cauchy sequence \(\{x_n\}_{n=1}^\infty\) in \(X\) has a limit \(x \in X\).
+
+\subsubsection{Metric space Hausdorff}
+
+Let \(X, d\) be a complete metric space. Then \(\mathcal{H}(X)\) denotes the space whose points are the compact subsets of \(X\), other than the empty set.
+
+\textbf{Definition 6}. (\textit{Metric in space Hausdorff})
+
+Let \(X, d\) be a complete metric space. Let \(A, B \in \mathcal{H}(X)\). The Hausdorff distance between points \(A\) and \(B\) in \(\mathcal{H}(X)\) is defined by:
+
+\[
+h(A, B) = \max\{d(A, B), d(B, A)\}
+\]
+
+where
+
+\[
+d(A, B) = \max\{d(x, B) : x \in A\}
+\]
+
+\[
+d(x, B) = \min\{d(x, y) : y \in B\}
+\]
+
+\textbf{Theorem 2}. (\textit{The completeness of metric space Hausdorff})
+
+Let \(X, d\) be a complete metric space. Then \((\mathcal{H}(X), h_d)\) is a complete metric space. Moreover, if \(\{A_n \in \mathcal{H}(X)\}_{n=1}^\infty\) is a Cauchy sequence then:
+
+\[
+A = \lim_{n \to \infty} A_n \in \mathcal{H}(X)
+\]
+
+\[
+A = \{x \in X : \exists \text{ a Cauchy sequence } \{x_n \in A_n\} \rightarrow x\}
+\]
+
+\subsubsection{Contraction mapping and fixed point}
+
+\textbf{Definition 1}. (\textit{Contraction mapping})
+
+A transformation \(f: X \rightarrow X\) on a metric space \(X, d\) is called contractive or a contraction mapping if:
+
+\[
+\exists s, 0 \leq s < 1 \text{ such that } d(f(x), f(y)) \leq s \cdot d(x, y) \quad \forall x, y \in X
+\]
+
+Any such number \(s\) is called a contractivity factor for \(f\).
+
+\textbf{Theorem 3}. (\textit{Contraction mapping})
+
+Let \(f: X \rightarrow X\) be a contraction mapping on a complete metric space \(X, d\). Then \(f\) possesses exactly one fixed point \(x_f \in X\) and moreover for any point \(x \in X\), the sequence \(\{f^n(x)\} \rightarrow x_f\). That is:
+
+\[
+\lim_{n \to \infty} f^n(x) = x_f \quad \forall x \in X
+\]
+
+\textbf{Theorem 4}. (\textit{Fixed point approximation})
+
+Let \(f: X \rightarrow X\) be a contraction mapping on a complete metric space \(X, d\) with contractivity factor \(s\). The fixed point \(x_f\) is approximated by the following expression:
+
+\[
+d(f^n(x), x_f) \leq \frac{s^n}{1 - s} d(x, f(x)) \quad \forall x \in X
+\]
+
+\textbf{Theorem 5}. (\textit{Approximate \(x\) by fixed point})
+
+Let \(f: X \rightarrow X\) be a contraction mapping on a complete metric space \(X, d\) with contractivity factor \(s\), fixed point \(x_f \in X\). Then:
+
+\[
+d(x, x_f) \leq \frac{1}{1 - s} d(x, f(x)) \quad \forall x \in X
+\]
+
+\subsubsection{Contraction mapping on metric space Hausdorff}
+
+\textbf{Lemma 1}. (\textit{Contraction mapping})
+
+Let \(f: X \rightarrow X\) be a contraction mapping on a complete metric space \(X, d\) with contractivity factor \(s\). Then \(w: \mathcal{H}(X) \rightarrow \mathcal{H}(X)\) defined by:
+
+\[
+w(B) = \{w(x) : x \in B\} \quad \forall B \in \mathcal{H}(X)
+\]
+
+is a contraction mapping on \(\mathcal{H}(X), h(d)\) with contractivity factor \(s\).
+
+\textbf{Lemma 2}. (\textit{Contraction mapping sequence})
+
+Let \(X, d\) be a metric space. Let \(\{w_n\}_{n=1}^\infty\) be contraction mappings on \(\mathcal{H}(X), h(d)\) with contractivity factor for \(w_n\) denoted by \(s_n\) for each \(n\). Define \(W: \mathcal{H}(X) \rightarrow \mathcal{H}(X)\) by:
+
+\[
+W(B) = w_1(B) \cup w_2(B) \cup \ldots \cup w_N(B)
+\]
+
+\[
+= \bigcup_{n=1}^N w_n(B) \quad \text{for each } B \in \mathcal{H}(X)
+\]
+
+Then \(W\) is a contraction mapping with contractivity factor:
+
+\[
+s = \max\{s_n : n = 1, 2, \ldots, N\}
+\]
+
+\textbf{Theorem 6}. (\textit{Fixed set in metric space Hausdorff})
+
+Let \(\{w_n\}_{n=1}^N\) be an iterated function system with contractivity factor \(s\). Then the transformation \(W: \mathcal{H}(X) \rightarrow \mathcal{H}(X)\) defined by:
+
+\[
+W(B) = \bigcup_{n=1}^N w_n(B) \quad \text{for all } B \in \mathcal{H}(X)
+\]
+
+is a contraction mapping on the complete metric space \(\mathcal{H}(X), h(d)\) with contractivity factor \(s\). Its unique fixed set, \(A \in \mathcal{H}(X)\), obeys:
+
+\[
+A = W(A) = \bigcup_{n=1}^N w_n(A)
+\]
+
+\[
+A = \lim_{n \to \infty} W^n(B), \quad B \in \mathcal{H}(X)
+\]
+
+\textbf{Theorem 7}. (\textit{Approximate fixed set in metric space Hausdorff})
+
+Let \(\{w_n\}_{n=1}^N\) be an iterated function system with contractivity factor \(s\). Then the transformation \(W: \mathcal{H}(X) \rightarrow \mathcal{H}(X)\) defined by:
+
+\[
+W(B) = \bigcup_{n=1}^N w_n(B) \quad \text{for all } B \in \mathcal{H}(X)
+\]
+
+\(A \in \mathcal{H}(X)\) is a fixed set approximated by:
+
+\[
+h(W^n(B), A) \leq \frac{s^n}{1 - s} h(B, W(B)) \quad \forall B \in \mathcal{H}(X)
+\]
+
+\textbf{Theorem 8}. (\textit{Approximate \(O\) by fixed set})
+
+Let \(O\) be a subset of \(\mathcal{H}(X)\). Let \(\{w_n\}_{n=1}^N\) be an iterated function system with contractivity factor \(s\). Then the transformation \(W: \mathcal{H}(X) \rightarrow \mathcal{H}(X)\) defined by:
+
+\[
+W(B) = \bigcup_{n=1}^N w_n(B) \quad \text{for all } B \in \mathcal{H}(X)
+\]
+
+\(A \in \mathcal{H}(X)\) is a fixed set of \(W\),
+
+\[
+h(O, A) \leq \frac{1}{1 - s} h(O, W(O))
+\]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Applications of Metric Space in VDA}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\textbf{Q: Nếu d không thoả điều kiện trong phương trình iii: tính bắc cầu  thì gây khó khăn gì?}
+A: 
+
+\textbf{Cho ví dụ về không gian metric}
+
+A: Cho không gian toạ độ ảnh, ta có: d(x,y): khoảng cách giữa 2 điểm x và y trong không gian Euclid, x = $(x_1, x_2)$ và $y = (y_1, y_2)$ với $x_1, x_2, y_1, y_2 \in \mathbb{N}$
+\begin{align*}
+    0 < d(x,y) &= \sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2} < \infty, \forall x \neq y, \forall x_1, x_2, y_1, y_2 \in \mathbb{N}\\
+    d(x,y) &= \sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2} = 0 \Leftrightarrow x = y\\
+    d(x,y) &= \sqrt{(y_1 - x_1)^2 + (y_2 - x_2)^2} = \sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2} = d(y,x)\\
+    Let z &= (z_1, z_2) \in \mathbb{N},\\
+    d(x,y) &= \sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2} \\
+    &\leq d(x,z) + d(z,y) = \sqrt{(x_1 - z_1)^2 + (x_2 - z_2)^2} + \sqrt{(z_1 - y_1)^2 + (z_2 - y_2)^2}\\
+    \Leftrightarrow (y_1 - x_1)^2 + (y_2 - x_2)^2 &\leq (y_1 - z_1)^2 + (y_2 - z_2)^2 + (z_1 - x_1)^2 + (z_2 - x_2)^2 +\\ 
+    &2\sqrt{(x_1 - z_1)^2 + (x_2 - z_2)^2}\sqrt{(z_1 - y_1)^2 + (z_2 - y_2)^2}\\
+    \Leftrightarrow (y_1 - z_1 + z_1 - x_1)^2 &+ (y_2 - z_2 + z_2 - x_2)^2 \\
+    &\leq (y_1 - z_1)^2 + (z_1 - x_1)^2 - 2(y_1 - z_1)(z_1 - x_1) \\
+    &+ (y_2 - z_2)^2 + (z_2 - x_2)^2 + 2(y_2 - z_2)(z_2 - x_2) \\
+    &\leq (y_1 - z_1)^2 + (z_1 - x_1)^2 + (y_2 - z_2)^2 + (z_2 - x_2)^2\\
+    \Leftrightarrow [(y_1 - z_1)(z_1 - x_1) &+ (y_2 - z_2)(z_2 - x_2)] \\
+    &\leq [(y_1 - z_1)^2 +(y_2 - z_2)^2] [(z_1 - x_1)^2 + (z_2 - x_2)^2]\\
+    &\textrm{Bất đẳng thức Bunjakowski-Schwarz}\\
+\end{align*}
+
+
+
+
+
+
+\textbf{Q: Cho ví dụ về dãy Cauchy mà không phải dãy hội tụ}
+A: 
+
+
+
+\textbf{Q: Trong hằng hà sa số các ánh xạ, tại sao ánh xạ co được chú ý nhất?}
+A: 
+
+\textbf{Q: giải thích định lí ánh xạ co và ứng dụng của nó}
+A: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Generative AI in Computer Vision
+
+Generative Model
+
+D and G play the following two-player minimax game with value function V (G, D):
+
+Min Max V(D,G) = Ex-pan [logD(x)] + E-P(z) [log(1-D(G(z)))]
+
+Discriminator output for real data x
+
+Discriminator output for generated fake data G(z)
+
+Min Max V(D,G) = Ex-Plate [logD(x)] + Ez-P2(2) [log(1 – D(G(z)))] G
+
+Error from the discriminator model training
+
+Error from the combined model training
+
+HOHUI Quốc Ngpo 12023
+
+57
+
+
+
+
+
+
+\subsection{Lecture 3. Apply metric space to VDA}
+
+
+
+
+
+
+
+
+
+
+\section{Chapter 3. Vector Space}
+\subsection{3.1. The role of vector space in VDA}
+\subsection{3.2. The basic concepts in vector space}
+\subsection{3.3. Applications of vector space in VDA}
+
+\section{Chapter 4. Optimization Method}
+\subsection{4.1. The role of optimization method in VDA}
+\subsection{4.2. Unconstrained optimization method}
+\subsection{4.3. Constrained optimization method}
+\subsection{4.4. Applications of optimization method in VDA}
+
+\section{Chapter 5. Method of Solving a System of Equations}
+\subsection{5.1. The role of system of equations in VDA}
+\subsection{5.2. Method of solving system of linear equations}
+\subsection{5.3. Method of solving system of non-linear equations}
+\subsection{5.4. Applications of system of equations in VDA}
+
+\section{Chapter 6. Method of Solving Partial Differential Equations}
+\subsection{6.1. The role of PDE in VDA}
+\subsection{6.2. Method of solving PDE}
+\subsection{6.3. Applications of PDE in VDA}
+
+\section{Chapter 7. Deep Learning}
+\subsection{7.1. The role of DL in VDA}
+\subsection{7.2. 2D and 3D Deep Convolution Neural Network}
+\subsection{7.3. Deep Recurrent Neural Network}
+\subsection{7.4. Applications of DL in VDA}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Section}
+
+\subsection{Một số lưu ý}
+
+\subsubsection{Cài đặt offline}
+Template này yêu cầu cài đặt một số gói (package) nâng cao cho TexStudio:
+\begin{itemize}
+\item Để gõ thuật toán: \texttt{algorithm} và \texttt{algpseudocode}
+\item Để nhúng (chèn) code: \texttt{listings}
+\end{itemize}
+Các gói này được cài đặt thông qua lệnh
+\begin{lstlisting}[language=sh]
+sudo apt-get install texlive-full
+\end{lstlisting}
+Tuy nhiên kích thước gói đâu đó vào khoảng 5GB (!). Vì vậy tốt nhất nên xài Overleaf.
+
+\subsubsection{Sử dụng font khác}
+Tham khảo font typefaces tại \href{https://www.overleaf.com/learn/latex/Font_typefaces}{link này}.
+
+\subsubsection{Đánh số chỉ mục bằng chữ số La Mã}
+Mở file \texttt{main.tex} và bỏ comment dòng 
+\begin{lstlisting}[language=tex]
+% \renewcommand{\thesection}{\Roman{section}}
+% \renewcommand{\thesubsection}{\thesection.\Roman{subsection}}  
+\end{lstlisting}
+
+\subsection{Ví dụ}
+Ngày xửa ngày xưa, ở vương quốc VNUHCM - US, có một chàng hoàng tử ngồi cắm đầu viết doc\footnote{Đây là footnote, chú thích lại những gì cần chú ý.}.\\
+Mặc định muốn xuống dòng chỉ cần dùng $\backslash\backslash$  (2 lần dấu xẹt huyền).\\
+Nếu bạn muốn thụt đầu dòng khi bắt đầu paragraph mới, vào \texttt{main.tex} và disble dòng
+\begin{lstlisting}[language=tex]
+\setlength{\parindent}{0pt}
+\end{lstlisting}
+
+\subsection{First subsection}
+\subsubsection{First sub-subsection}
+Subsection để ví dụ thôi. Thêm vài ví dụ:
+\begin{itemize}
+    \item Dùng itemize
+    \item Vẫn là itemize
+\end{itemize}
+Sau đó xài enumerate:
+\begin{enumerate}
+    \item Dùng enumerate
+    \item Vẫn là enumerate
+\end{enumerate}
+Nhỏ hơn subsubsection thì xài \texttt{paragraph}:
+
+\paragraph{Đây là ví dụ cho paragraph}
+Lưu ý là paragraph không nằm trong Mục lục.
+
+\subsection{Chia nhỏ nội dung}
+Bạn có thể chia nhỏ nội dung của báo cáo thành các file \texttt{.tex} và dùng lệnh \texttt{input} để chèn vào báo cáo chính. Ví dụ có trong file \texttt{main.tex}.
