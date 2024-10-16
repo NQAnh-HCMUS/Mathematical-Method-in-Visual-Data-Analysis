@@ -6,8 +6,6 @@ Introduction
 the fourth industrial revolution
 computer vision 
 
-
-
 \subsection{Intelligent Vision System}
     \subsubsection{The concept of Intelligence}
         Some indications of intelligence that are of interest include:
@@ -163,83 +161,42 @@ A: tuỳ vào model
 \textbf{Q: Nếu Intelligence System chỉ dừng ở mức thông minh mà không phải ở mức thông tuệ thì sẽ dừng ở lĩnh vực nào?}\\
 A: 
 
+An idea used in non-equilibrium statistical physics is that we can \textbf{gradually convert one distribution into another}. In 2015, Sohl-Dicktein et al., inspired by this, created "Diffusion Probabilistic models" or "Diffusion models" in short, building on this essential idea.
+
+They build - \textbf{"A generative Markov chain which converts a simple known distribution (e.g., a Gaussian) into a target (data) distribution using a diffusion process."}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.2]{img/ForwardNBackwardORReverse Diffusion process.jpg}
+    \caption{Illustration of Forward and Backward/Reverse Diffusion process}
+    \label{fig:my_label_with_H}
+\end{figure}
 
 
 
+\textbf{In 2015}, Sohl-Dickstein et al. published paper "Deep Unsupervised Learning using Nonequilibrium Thermodynamics" and Diffusion models in deep learning were first introduced.
 
-Generative AI in Computer Vision
+\textbf{In 2019}, Song et al. published a paper, "Generative Modeling by Estimating Gradients of the Data Distribution," using the same principle but a different approach.
 
-Diffusion Model
+\textbf{In 2020}, Ho et al. published the paper, now-popular "Denoising Diffusion Probabilistic Models" (DDPM for short).
 
-An idea used in non-equilibrium statistical physics is that we can gradually convert one distribution into another. In 2015, Sohl-Dicktein et al., inspired by this, created "Diffusion Probabilistic models" or "Diffusion models" in short, building on this essential idea.
-
-They build - "A generative Markov chain which converts a simple known distribution (e.g., a Gaussian) into a target (data) distribution using a diffusion process."
-
-X
-
-P(X-1)
-
-X-1
-
-(x-1)
-
-Illustration of Forward and Backward/Reverse Diffusion process
-
-Fit Introduction to Diffusion Models for Image Generation - A Comprehensive Guide (learnopencv.com)
-
-212
-
-53
-
-121
-
-
-
-Generative AI in Computer Vision
-
-Diffusion Model
-
-In 2015, Sohl-Dickstein et al. published paper "Deep Unsupervised Learning using Nonequilibrium Thermodynamics" and Diffusion models in deep learning were first introduced.
-
-In 2019, Song et al. published a paper, "Generative Modeling by Estimating Gradients of the Data Distribution," using the same principle but a different approach.
-
-In 2020, Ho et al. published the paper, now-popular "Denoising Diffusion Probabilistic Models" (DDPM for short).
-
-After 2020, research in diffusion models took off. Much progress has been made in creating, training, and improving diffusion-based generative modeling in a relatively short time.
-
-
-
-
-
-Generative AI in Computer Vision
-
-Diffusion Model
+\textbf{After 2020}, research in diffusion models took off. Much progress has been made in creating, training, and improving diffusion-based generative modeling in a relatively short time.
 
 Some of the Diffusion-based Image Generation models that became famous over the past few months.
 
-Som typical famous Diffusion-based Image Generation models include:
+Some typical famous Diffusion-based Image Generation models include:
+\begin{itemize}
+    \item \textbf{DALL-E 2} by OpenAI
+    \item \textbf{Imagen} by Google
+    \item \textbf{Stable Diffusion} by StabilityAI
+    \item \textbf{Midjourney}
+\end{itemize}
 
-• Dall-E 2 by OpenAl
+D and G play the following two-player minimax game with value function $V (G, D)$:
 
-• Imagen by Google
-
-• Stable Diffusion by StabilityAl
-
-Midjourney
-
-
-
-
-
-
-
-Generative AI in Computer Vision
-
-Generative Model
-
-D and G play the following two-player minimax game with value function V (G, D):
-
-Min Max V(D,G) = Ex-pan [logD(x)] + E-P(z) [log(1-D(G(z)))]
+\begin{equation*}
+    \min_{G} \max_{D} V(D,G) = \mathbb{E}_{x \sim p_{\text{data}}(x)}[\log D(x)] + \mathbb{E}_{z \sim p_{z}(z)}[\log(1 - D(G(z)))]
+\end{equation*}
 
 Discriminator output for real data x
 

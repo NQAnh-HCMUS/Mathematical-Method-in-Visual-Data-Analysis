@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.26)  16 OCT 2024 10:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.26)  16 OCT 2024 11:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -581,7 +581,7 @@ Package hyperref Info: Link coloring ON on input line 41.
 
 \c@lstlisting=\count319
 (./content/title.tex
-<img/hcmus-logo.png, id=188, 597.9138pt x 597.9138pt>
+<img/hcmus-logo.png, id=196, 597.9138pt x 597.9138pt>
 File: img/hcmus-logo.png Graphic file (type png)
 <use img/hcmus-logo.png>
 Package pdftex.def Info: img/hcmus-logo.png  used on input line 35.
@@ -604,7 +604,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.30 ...d optimization method}{16}{subsection.4.2}
+l.30 ...ter 4. Optimization Method}{16}{section.4}
                                                   % [1])
 \tf@toc=\write4
 \openout4 = `main.toc'.
@@ -631,7 +631,7 @@ Overfull \hbox (1.00848pt too wide) in paragraph at lines 1--1
 
 
 [1{c:/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-Underfull \hbox (badness 10000) in paragraph at lines 63--66
+Underfull \hbox (badness 10000) in paragraph at lines 61--64
 
  []
 
@@ -642,16 +642,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 63--66
 [3]
 
 [4]
-Overfull \hbox (16.21312pt too wide) in paragraph at lines 188--189
-[]\T5/cmr/m/n/12 Fit In-tro-duc-tion to Dif-fu-sion Mod-els for Im-age Gen-er-a-tion - A Com-pre-hen-sive Guide (learnopencv.com) 
- []
+<img/ForwardNBackwardORReverse Diffusion process.jpg, id=304, 2321.67375pt x 729.72626pt>
+File: img/ForwardNBackwardORReverse Diffusion process.jpg Graphic file (type jpg)
+<use img/ForwardNBackwardORReverse Diffusion process.jpg>
+Package pdftex.def Info: img/ForwardNBackwardORReverse Diffusion process.jpg  used on input line 170.
+(pdftex.def)             Requested size: 464.32652pt x 145.94266pt.
 
 
-
-[5]
+[5 <./img/ForwardNBackwardORReverse Diffusion process.jpg>]
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 281--282
+Underfull \hbox (badness 10000) in paragraph at lines 238--239
 
  []
 
@@ -666,7 +667,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 281--282
 [10]
 
 [11]
-Overfull \hbox (3.23897pt too wide) detected at line 588
+Overfull \hbox (3.23897pt too wide) detected at line 545
 []
  []
 
@@ -688,32 +689,22 @@ Overfull \vbox (234.11879pt too high) has occurred while \output is active []
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-07-20>
  ***********
-
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 57D31CA48B8AAE0099F377B9A6E824F5;11053
-(rerunfilecheck)             After:  2DE2AFF0BBB878B7991205D6851F208D;11373.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 2DE2AFF0BBB878B7991205D6851F208D;11373.
  ) ) 
 Here is how much of TeX's memory you used:
- 13347 strings out of 473578
- 200568 string characters out of 5732242
+ 13362 strings out of 473578
+ 201112 string characters out of 5732242
  1943960 words of memory out of 5000000
- 35977 multiletter control sequences out of 15000+600000
+ 35992 multiletter control sequences out of 15000+600000
  577686 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  90i,14n,93p,623b,543s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{subsubsection.1.1.6} has been referenced but does not exist, replaced by a fixed one
-
-<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vncsc10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnti12.pfb>
-Output written on main.pdf (21 pages, 384386 bytes).
+<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vncsc10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnti12.pfb>
+Output written on main.pdf (21 pages, 494866 bytes).
 PDF statistics:
- 446 PDF objects out of 1000 (max. 8388607)
- 389 compressed objects within 4 object streams
+ 467 PDF objects out of 1000 (max. 8388607)
+ 404 compressed objects within 5 object streams
  73 named destinations out of 1000 (max. 500000)
- 374 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 395 words of extra memory for PDF output out of 10000 (max. 10000000)
 
