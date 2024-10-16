@@ -465,8 +465,16 @@ W(B) = \bigcup_{n=1}^N w_n(B) \quad \text{for all } B \in \mathcal{H}(X)
 \(A \in \mathcal{H}(X)\) is a fixed set approximated (A không bao giờ có giá trị chính xác mà chỉ có giá trị xấp xỉ) by:
 
 \[
-h(W^n(B), A) \leq \frac{s^n}{1 - s} h(B, W(B)) \quad \forall B \in \mathcal{H}(X)
+h(W^{on}(B), A) \leq \frac{s^n}{1 - s} h(B, W(B)) \quad \forall B \in \mathcal{H}(X)
 \]
+
+\textbf{Q: Ý nghĩa của tính chất này?}\\
+A: cho các xấp xỉ 
+\begin{align*}
+h(W^{on}(B), A) &\leq \frac{s^n}{1 - s} h(B, W(B)) \quad \forall B \in \mathcal{H}(X)\\
+\exists \varepsilon: h(W^{on}(B), A) &\leq \varepsilon \quad \forall B \in \mathcal{H}(X)\\
+\textrm{Let } C &= h(B, W(B))\\
+\end{align*}
 
 \textbf{Theorem 8}. (\textit{Approximate \(O\) by fixed set})
 
@@ -482,33 +490,8 @@ W(B) = \bigcup_{n=1}^N w_n(B) \quad \text{for all } B \in \mathcal{H}(X)
 h(O, A) \leq \frac{1}{1 - s} h(O, W(O))
 \]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\textbf{Q: Ý nghĩa của tính chất này?}\\
+A: khẳng định điều kiện khi nào A gần giống O
 
 
 
@@ -641,26 +624,31 @@ Consider IFS \{ $\mathbb{R}^2$, $w_n$: $n = 1, 2, \ldots, N$ \}
 
 $p_i$ associated with $w_i$
 
-$p_i \approx \frac{|\det A_i|}{\sum_{i=1}^N |\det A_i|}$
+\begin{equation*}
+    p_i \approx \frac{|\det A_i|}{\sum_{i=1}^N |\det A_i|} = \frac{|a_i d_i - b_i c_i|}{\sum_{i=1}^N (a_i d_i - b_i c_i)}, i = 1, 2, \ldots, N
+\end{equation*}
 
-$N = \sum_{i=1}^N \det A_i = \sum_{i=1}^N (a_i d_i - b_i c_i)$
-
-\textbf{3.1.} Drawing based on Fractal geometry
+\textbf{Q: Vẽ 1 giao diện cho phép tạo W để vẽ hình fractal}\\
+A:
 
 \textbf{Deterministic Algorithm}
 
-Let, be an IFS,
+Let, ${X; w_1, w_2, \ldots, w_N}$ be an IFS,
 
-Compute directly a sequence of sets,
-
-starting from an initial set $A \subseteq \mathbb{R}^2$
-
-$A_{n+1} = \bigcup_{j=1}^N w_j(A_n)$, $n = 1, 2, \ldots$
+Compute directly a sequence of sets $A_n = W^{on}(B)$, starting from an initial set $A \subset \mathbb{R}^2$
+\begin{align*}
+    B&\\
+    A_1 &= W^{01}(B)\\
+    A_2 &= W^{02}(B) = W^{01}(W^{01}(B)) = W^{01}(A_1)\\
+    \ldots\\
+    A_{n+1} &= W^{01}(A_n)\\
+    &= \bigcup_{j=1}^N w_j(A_n), n =1, 2, \ldots
+\end{align*}
 
 Sequence $\{A_n\}$ converges to the attractor $A$ of the IFS in the Hausdorff metric.
 
-
-\textbf{3.1.} Drawing based on Fractal geometry
+\textbf{Q: Nguyên lí vẽ hình Fractal?}\\
+A: Định lí ánh xạ co và hệ hàm lặp IFS
 
 \textbf{Deterministic Algorithm}
 
@@ -696,12 +684,6 @@ $s[a[2]*i+b[2]*j+e[2], c[2]*i+d[2]*j+f[2]]=1$
 
 12. End /for $i$/
 
-PGS.TS. Lý Quốc Ngọc
-
-\textbf{3.1.} Drawing based on Fractal geometry
-
-\textbf{Deterministic Algorithm}
-
 13. For $i=1$ to $M$
 
 14. For $j=1$ to $M$
@@ -722,29 +704,21 @@ PGS.TS. Lý Quốc Ngọc
 
 22. Until $A(n+1)=W(A(n+1))$
 
-PGS.TS. Lý Quốc Ngọc
+\textbf{Q: Ý nghĩa của thuật toán này?}\\
+A: 
 
-\textbf{3.1.} Drawing based on Fractal geometry
 
 \textbf{Random Iteration Algorithm}
 
-Let be an IFS, where has been $1, 2, \ldots, N$ assigned to $i$, $\sum p_i = 1$
+Let $\{X; w_1, w_2, \ldots, w_N\}$ be an IFS, where $p_i > 0$ has been $1, 2, \ldots, N$ assigned to $w_i > 0$, $\sum p_i = 1$
 
-Choose $x \in X$ and then choose recursively, independently,
+Choose $x_0 \in X$ and then choose recursively, independently,
 
 $x_n \in \{ w_1(x_{n-1}), w_2(x_{n-1}), \ldots, w_N(x_{n-1}) \}$, $n = 1, 2, 3, \ldots$
 
 Where the probability of the event $x_n = w_i(x_{n-1})$ is $p_i$
 
-Sequence $\{x_n\}$ be constructed converges to the attractor of
-
-the IFS.
-
-PGS.TS. Lý Quốc Ngọc
-
-\textbf{3.1.} Drawing based on Fractal geometry
-
-\textbf{Random Iteration Algorithm}
+Sequence $\{x_n\}$ be constructed converges to the attractor of the IFS.
 
 1. Initialize $s[M,M]$, $t[M,M]$
 
@@ -779,9 +753,7 @@ $a[3]=0.5; b[3]=0; c[3]=0; d[3]=0.5; e[3]=50; f[3]=50$
 
 \textbf{Method}
 
-Based on theorem of contraction mapping sequence in
-
-metric space Hausdorff
+Based on theorem of contraction mapping sequence in metric space Hausdorff
 
 Let the Original image be $O$
 
@@ -791,10 +763,8 @@ The ideal uncompressed will be $A$
 
 The real uncompressed be $W(B)$
 
-PGS.TS. Lý Quốc Ngọc
-
-
-
+\textbf{Q: Ứng dụng vào ảnh Fractal?}\\
+A: 
 
 
 
