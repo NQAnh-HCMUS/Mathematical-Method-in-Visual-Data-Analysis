@@ -273,13 +273,9 @@ A:
 Dataset for VLM
 
 \section{Lecture 2. Metric Space}
-
 \subsection{The Role of Metric Space in VDA}
-
 \subsection{The Basic Concepts in Metric Space}
-
-
-
+\pagebreak
 \subsubsection{Metric Space}
 
 Metric space $(X, d)$ is space $(X)$ together with a real-valued function \(d\), \(d: X \times X \rightarrow \mathbb{R}\), which measures the distance between pairs of points \(x\) and \(y\) in \(X\).\\
@@ -301,7 +297,6 @@ A sequence of points \(\{x_n\}_{n=1}^\infty\) in a metric space \(X, d\) is call
 \[
 \forall \epsilon > 0, \exists N > 0 \text{ such that } d(x_n, x_m) < \epsilon \quad \forall n, m > N
 \]
-
 \subsubsection{Convergent sequence}
 
 A sequence of points \(\{x_n\}_{n=1}^\infty\) is said to converge to a point \(x \in X\) in metric space \(X, d\) if:
@@ -316,6 +311,7 @@ A sequence of points \(\{x_n\}_{n=1}^\infty\) is said to converge to a point \(x
 x = \lim_{n \to \infty} x_n
 \]
 
+\pagebreak
 \subsubsection{Complete Metric Space}
 
 \textbf{Theorem 1}. (\textit{Convergent sequence \& Cauchy sequence})
@@ -360,6 +356,7 @@ A = \lim_{n \to \infty} A_n \in \mathcal{H}(X)
 A = \{x \in X : \exists \text{ a Cauchy sequence } \{x_n \in A_n\} \rightarrow x\}
 \]
 
+\pagebreak
 \subsubsection{Contraction mapping and fixed point}
 
 \textbf{Definition 1}. (\textit{Contraction mapping})
@@ -396,6 +393,7 @@ Let \(f: X \rightarrow X\) be a contraction mapping on a complete metric space \
 d(x, x_f) \leq \frac{1}{1 - s} d(x, f(x)) \quad \forall x \in X
 \]
 
+\pagebreak
 \subsubsection{Contraction mapping on metric space Hausdorff}
 
 \textbf{Lemma 1}. (\textit{Contraction mapping})
@@ -454,6 +452,9 @@ A: self-similarity (đặc tính tự tương tự)
 \end{align*}
 $\rightarrow$ tính chất tự phân hình (tính chất fractal)
 
+\textbf{Q: Lí giải vì sao cho B nào cx quay về A?}\\
+A:
+
 \textbf{Theorem 7}. (\textit{Approximate fixed set in metric space Hausdorff})
 
 Let \(\{w_n\}_{n=1}^N\) be an iterated function system with contractivity factor \(s\). Then the transformation \(W: \mathcal{H}(X) \rightarrow \mathcal{H}(X)\) defined by:
@@ -493,11 +494,7 @@ h(O, A) \leq \frac{1}{1 - s} h(O, W(O))
 \textbf{Q: Ý nghĩa của tính chất này?}\\
 A: khẳng định điều kiện khi nào A gần giống O
 
-
-
-
-
-
+\pagebreak
 \subsection{Applications of Metric Space in VDA}
 
 
@@ -513,11 +510,10 @@ A: khẳng định điều kiện khi nào A gần giống O
 
 
 
-\textbf{Q: Nếu d không thoả điều kiện trong phương trình iii: tính bắc cầu  thì gây khó khăn gì?}
+\textbf{Q: Nếu d không thoả điều kiện trong phương trình iii: tính bắc cầu  thì gây khó khăn gì?}\\
 A: 
 
-\textbf{Cho ví dụ về không gian metric}
-
+\textbf{Cho ví dụ về không gian metric}\\
 A: Cho không gian toạ độ ảnh, ta có: d(x,y): khoảng cách giữa 2 điểm x và y trong không gian Euclid, x = $(x_1, x_2)$ và $y = (y_1, y_2)$ với $x_1, x_2, y_1, y_2 \in \mathbb{N}$
 \begin{align*}
     0 < d(x,y) &= \sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2} < \infty, \forall x \neq y, \forall x_1, x_2, y_1, y_2 \in \mathbb{N}\\
@@ -542,15 +538,13 @@ A: Cho không gian toạ độ ảnh, ta có: d(x,y): khoảng cách giữa 2 đ
 
 
 
-\textbf{Q: Cho ví dụ về dãy Cauchy mà không phải dãy hội tụ}
+\textbf{Q: Cho ví dụ về dãy Cauchy mà không phải dãy hội tụ}\\
 A: 
 
-
-
-\textbf{Q: Trong hằng hà sa số các ánh xạ, tại sao ánh xạ co được chú ý nhất?}
+\textbf{Q: Trong hằng hà sa số các ánh xạ, tại sao ánh xạ co được chú ý nhất?}\\
 A: 
 
-\textbf{Q: giải thích định lí ánh xạ co và ứng dụng của nó}
+\textbf{Q: giải thích định lí ánh xạ co và ứng dụng của nó}\\
 A: 
 
 
@@ -592,7 +586,7 @@ HOHUI Quốc Ngpo 12023
 
 
 
-
+\pagebreak
 \subsection{Lecture 3. Apply metric space to VDA}
 \subsubsection {Drawing based on Fractal geometry}
 \textbf{3.1.1}. Computing Fractals from Iterated Function Systems
@@ -647,9 +641,18 @@ Compute directly a sequence of sets $A_n = W^{on}(B)$, starting from an initial 
 
 Sequence $\{A_n\}$ converges to the attractor $A$ of the IFS in the Hausdorff metric.
 
-\textbf{Q: Nguyên lí vẽ hình Fractal?}\\
-A: Định lí ánh xạ co và hệ hàm lặp IFS
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|}
+    \hline
+    \textbf{Q: Nguyên lí vẽ hình Fractal?}  \\ \hline
+    A: Định lí ánh xạ co và hệ hàm lặp IFS  \\ \hline
+    \end{tabular}
+    % \caption{}
+    % \label{tab:my_label_with_H_tag}
+\end{table}.
 
+\pagebreak
 \textbf{Deterministic Algorithm}
 
 1. Initialize $s[M,M]$, $t[M,M]$
@@ -712,7 +715,7 @@ A:
 
 Let $\{X; w_1, w_2, \ldots, w_N\}$ be an IFS, where $p_i > 0$ has been $1, 2, \ldots, N$ assigned to $w_i > 0$, $\sum p_i = 1$
 
-Choose $x_0 \in X$ and then choose recursively, independently,
+Choose $x_0+- \in X$ and then choose recursively, independently,
 
 $x_n \in \{ w_1(x_{n-1}), w_2(x_{n-1}), \ldots, w_N(x_{n-1}) \}$, $n = 1, 2, 3, \ldots$
 
@@ -769,6 +772,34 @@ A:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\textbf{Q: Ảnh tụ có phụ thuộc vào ảnh ban đầu không?}\\
+A:
+
+\textbf{Q: Viết chương trình nén/giải nén bằng kĩ thuật Fractal?}\\
+A: asdasdasdasda
+
+không gian metric hiểu các yếu tố cơ bản
+, định lí ánh xạ co \& ứng dụng trong tạo hình \& nén ảnh Fractal, 
+không gian vector
+
 \section{Chapter 3. Vector Space}
 \subsection{The role of vector space in VDA}
 \subsection{The basic concepts in vector space}
@@ -797,13 +828,7 @@ A:
 \subsection{Deep Recurrent Neural Network}
 \subsection{Applications of DL in VDA}
 
-\end{document}
-
-
-
-
-
-
+% \end{document}
 
 
 

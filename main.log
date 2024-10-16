@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.26)  16 OCT 2024 15:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.26)  16 OCT 2024 16:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -497,7 +497,11 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count312
 \l__pdf_internal_box=\box58
-) (./main.aux)
+) (./main.aux
+
+LaTeX Warning: Label `fig:my_label_with_H' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
@@ -581,7 +585,7 @@ Package hyperref Info: Link coloring ON on input line 41.
 
 \c@lstlisting=\count319
 (./content/title.tex
-<img/hcmus-logo.png, id=205, 597.9138pt x 597.9138pt>
+<img/hcmus-logo.png, id=277, 597.9138pt x 597.9138pt>
 File: img/hcmus-logo.png Graphic file (type png)
 <use img/hcmus-logo.png>
 Package pdftex.def Info: img/hcmus-logo.png  used on input line 35.
@@ -604,26 +608,32 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.30 ...cepts in vector space}{19}{subsection.3.2}
-                                                  % [1])
+l.30 ...cepts in vector space}{21}{subsection.3.2}
+                                                  % [1]
+
+[2])
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
 
 
-[2] (./main.lot)
+[3] (./main.lot
+LaTeX Font Info:    Trying to load font information for T5+cmtt on input line 1.
+ (c:/texlive/2024/texmf-dist/tex/latex/vntex/t5cmtt.fd
+File: t5cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+))
 \tf@lot=\write5
 \openout5 = `main.lot'.
 
 
 
-[3] (./main.lof)
+[4] (./main.lof)
 \tf@lof=\write6
 \openout6 = `main.lof'.
 
 
 
-[4] (./content/section.tex
+[5] (./content/section.tex
 Overfull \hbox (1.00848pt too wide) in paragraph at lines 1--1
 []\T5/cmr/bx/n/17.28 Lecture 1. In-tro-duc-tion to Math-e-mat-i-cal Method in VDA 
  []
@@ -642,7 +652,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 61--64
 [3]
 
 [4]
-<img/ForwardNBackwardORReverse Diffusion process.jpg, id=315, 2321.67375pt x 729.72626pt>
+<img/ForwardNBackwardORReverse Diffusion process.jpg, id=419, 2321.67375pt x 729.72626pt>
 File: img/ForwardNBackwardORReverse Diffusion process.jpg Graphic file (type jpg)
 <use img/ForwardNBackwardORReverse Diffusion process.jpg>
 Package pdftex.def Info: img/ForwardNBackwardORReverse Diffusion process.jpg  used on input line 170.
@@ -669,13 +679,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 238--239
 [11]
 
 [12]
-Overfull \hbox (3.23897pt too wide) detected at line 538
+
+[13]
+Overfull \hbox (3.23897pt too wide) detected at line 534
 []
  []
 
 
-
-[13]
 
 [14]
 
@@ -686,31 +696,107 @@ Overfull \hbox (3.23897pt too wide) detected at line 538
 [17]
 
 [18]
-Overfull \vbox (193.37068pt too high) has occurred while \output is active []
+
+[19]
+
+[20]
+Overfull \vbox (324.24734pt too high) has occurred while \output is active []
 
 
 
-[19] (./main.aux)
+[21] (c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/05/25 1.10b listings language file
+) (c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/05/25 1.10b listings language file
+) (c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang2.sty
+File: lstlang2.sty 2024/05/25 1.10b listings language file
+) (c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang3.sty
+File: lstlang3.sty 2024/05/25 1.10b listings language file
+) (c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/05/25 1.10b listings language file
+) (c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang2.sty
+File: lstlang2.sty 2024/05/25 1.10b listings language file
+) (c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang3.sty
+File: lstlang3.sty 2024/05/25 1.10b listings language file
+) (c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/05/25 1.10b listings language file
+) (c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang2.sty
+File: lstlang2.sty 2024/05/25 1.10b listings language file
+) (c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang3.sty
+File: lstlang3.sty 2024/05/25 1.10b listings language file
+) (c:/texlive/2024/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2024/05/25 1.10b (Carsten Heinz)
+)
+
+[22]) (./content/hinhanh.tex
+File: img/hcmus-logo.png Graphic file (type png)
+<use img/hcmus-logo.png>
+Package pdftex.def Info: img/hcmus-logo.png  used on input line 5.
+(pdftex.def)             Requested size: 239.16129pt x 239.16129pt.
+File: img/hcmus-logo.png Graphic file (type png)
+<use img/hcmus-logo.png>
+Package pdftex.def Info: img/hcmus-logo.png  used on input line 14.
+(pdftex.def)             Requested size: 239.16129pt x 239.16129pt.
+) (./content/bangbieu.tex
+
+[23]) (./content/congthuctoan.tex
+
+[24]) (./content/thuattoan.tex
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 5.
+) (./content/code.tex (c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/05/25 1.10b listings language file
+) (c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/05/25 1.10b listings language file
+) (c:/texlive/2024/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2024/05/25 1.10b (Carsten Heinz)
+)
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 3.
+ (./code/example.cpp) (c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/05/25 1.10b listings language file
+) (./code/example.py)
+
+[25] (./code/example-vietnamese.py)) (./content/ngonngu.tex) (./content/cite.tex
+
+[26]
+
+LaTeX Warning: Citation `greenwade93' on page 27 undefined on input line 5.
+
+) (./ref/ref.tex
+
+[27]
+No file main.bbl.
+) (./appendix/appendix.tex)
+
+[28
+
+] (./main.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-07-20>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 077CF580215C0383E0AFE56085C3B08E;11303.
- ) ) 
+(rerunfilecheck)             Checksum: 1CCEF6566B57B39503AD7E15D8D2DF3F;13669.
+ ) 
 Here is how much of TeX's memory you used:
- 13371 strings out of 473578
- 201261 string characters out of 5732242
- 1943960 words of memory out of 5000000
- 35996 multiletter control sequences out of 15000+600000
- 577686 words of font info for 71 fonts, out of 8000000 for 9000
+ 15239 strings out of 473578
+ 225605 string characters out of 5732242
+ 1976960 words of memory out of 5000000
+ 37722 multiletter control sequences out of 15000+600000
+ 581952 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 90i,14n,93p,623b,543s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vncsc10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnti12.pfb>
-Output written on main.pdf (24 pages, 509708 bytes).
+ 90i,14n,93p,623b,2000s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vncsc10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnr7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vntt10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vntt12.pfb>
+Output written on main.pdf (34 pages, 577903 bytes).
 PDF statistics:
- 492 PDF objects out of 1000 (max. 8388607)
- 426 compressed objects within 5 object streams
- 78 named destinations out of 1000 (max. 500000)
- 411 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 725 PDF objects out of 1000 (max. 8388607)
+ 639 compressed objects within 7 object streams
+ 141 named destinations out of 1000 (max. 500000)
+ 555 words of extra memory for PDF output out of 10000 (max. 10000000)
 
