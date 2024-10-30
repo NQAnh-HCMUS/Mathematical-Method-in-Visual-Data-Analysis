@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.26)  30 OCT 2024 10:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.26)  30 OCT 2024 14:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -604,7 +604,7 @@ Package hyperref Info: Link coloring ON on input line 41.
 
 \c@lstlisting=\count320
 (./content/title.tex
-<img/hcmus-logo.png, id=361, 597.9138pt x 597.9138pt>
+<img/hcmus-logo.png, id=353, 597.9138pt x 597.9138pt>
 File: img/hcmus-logo.png Graphic file (type png)
 <use img/hcmus-logo.png>
 Package pdftex.def Info: img/hcmus-logo.png  used on input line 35.
@@ -627,7 +627,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.30 ...Linear Transformation}{23}{subsection.3.2}
+l.30 ...Linear Transformation}{24}{subsection.3.2}
                                                   % [1]
 
 [2]
@@ -675,7 +675,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 61--64
 [4]
 
 [5]
-<img/ForwardNBackwardORReverse Diffusion process.jpg, id=535, 2321.67375pt x 729.72626pt>
+<img/ForwardNBackwardORReverse Diffusion process.jpg, id=525, 2321.67375pt x 729.72626pt>
 File: img/ForwardNBackwardORReverse Diffusion process.jpg Graphic file (type jpg)
 <use img/ForwardNBackwardORReverse Diffusion process.jpg>
 Package pdftex.def Info: img/ForwardNBackwardORReverse Diffusion process.jpg  used on input line 192.
@@ -745,11 +745,15 @@ Overfull \hbox (3.23897pt too wide) detected at line 554
 [31]
 
 [32]
-Overfull \vbox (215.87068pt too high) has occurred while \output is active []
+
+[33]
+
+[34]
+Overfull \vbox (175.12257pt too high) has occurred while \output is active []
 
 
 
-[33] (c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
+[35] (c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/05/25 1.10b listings language file
 ) (c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/05/25 1.10b listings language file
@@ -773,7 +777,7 @@ File: lstlang3.sty 2024/05/25 1.10b listings language file
 File: lstmisc.sty 2024/05/25 1.10b (Carsten Heinz)
 )
 
-[34]) (./content/hinhanh.tex
+[36]) (./content/hinhanh.tex
 File: img/hcmus-logo.png Graphic file (type png)
 <use img/hcmus-logo.png>
 Package pdftex.def Info: img/hcmus-logo.png  used on input line 5.
@@ -784,9 +788,9 @@ Package pdftex.def Info: img/hcmus-logo.png  used on input line 14.
 (pdftex.def)             Requested size: 239.16129pt x 239.16129pt.
 ) (./content/bangbieu.tex
 
-[35]) (./content/congthuctoan.tex
+[37]) (./content/congthuctoan.tex
 
-[36]) (./content/thuattoan.tex
+[38]) (./content/thuattoan.tex
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 5.
 ) (./content/code.tex (c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/05/25 1.10b listings language file
@@ -800,19 +804,19 @@ Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on in
 File: lstlang1.sty 2024/05/25 1.10b listings language file
 ) (./code/example.py
 
-[37]
+[39]
 
-[38]) (./code/example-vietnamese.py)) (./content/ngonngu.tex) (./content/cite.tex
+[40]) (./code/example-vietnamese.py)) (./content/ngonngu.tex) (./content/cite.tex
 
-LaTeX Warning: Citation `greenwade93' on page 39 undefined on input line 5.
+LaTeX Warning: Citation `greenwade93' on page 41 undefined on input line 5.
 
 ) (./ref/ref.tex
 
-[39]
+[41]
 No file main.bbl.
 ) (./appendix/appendix.tex)
 
-[40
+[42
 
 ] (./main.aux)
  ***********
@@ -826,34 +830,22 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: C7C15F95CC1DCBA024FB668789BF5361;18940
-(rerunfilecheck)             After:  0EDC722C18DADF41AF335C32DA314810;18411.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 316FFD6BAE974E274272FA22FF484333;18325.
  ) 
 Here is how much of TeX's memory you used:
- 15532 strings out of 473578
- 229637 string characters out of 5732242
+ 15539 strings out of 473578
+ 229783 string characters out of 5732242
  2039960 words of memory out of 5000000
- 37917 multiletter control sequences out of 15000+600000
+ 37921 multiletter control sequences out of 15000+600000
  581952 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 90i,14n,93p,623b,2178s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{subsection.3.8} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.3.7} has been referenced but does not exist, replaced by a fixed one
-
+ 90i,16n,93p,623b,2178s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vncsc10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnr7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vntt10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vntt12.pfb>
-Output written on main.pdf (47 pages, 619134 bytes).
+Output written on main.pdf (49 pages, 627509 bytes).
 PDF statistics:
- 979 PDF objects out of 1000 (max. 8388607)
- 878 compressed objects within 9 object streams
- 233 named destinations out of 1000 (max. 500000)
- 723 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 985 PDF objects out of 1000 (max. 8388607)
+ 882 compressed objects within 9 object streams
+ 236 named destinations out of 1000 (max. 500000)
+ 707 words of extra memory for PDF output out of 10000 (max. 10000000)
 
