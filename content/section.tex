@@ -814,9 +814,420 @@ A:
 A: 
 
 \section{Chapter 3. Vector Space}
-\subsection{The role of vector space in VDA}
-\subsection{The basic concepts in vector space}
-\subsection{Applications of vector space in VDA}
+\subsection{Definition (Vector space)}
+
+A vector space $E$ over the field $T$ is a non-empty set that satisfies the following 8 properties:
+
+\begin{enumerate}
+    \item $x + y = y + x$
+    \item $(x + y) + z = x + (y + z)$
+    \item $\exists 0 \in E: x + 0 = x$
+    \item $\forall x \in E, \exists (-x) \in E: x + (-x) = 0$
+    \item $(\alpha + \beta) \cdot x = \alpha \cdot x + \beta \cdot x$
+    \item $\alpha \cdot (x + y) = \alpha \cdot x + \alpha \cdot y$
+    \item $(\alpha \cdot \beta) \cdot x = \alpha \cdot (\beta \cdot x)$
+    \item $1 \cdot x = x$
+\end{enumerate}
+
+\subsection{Linear map, Linear Transformation}
+
+\subsubsection{Definition (Linear map)}
+
+Given vector spaces $E$ and $F$ over the field $T$.
+
+The linear map from $E$ to $F$ is the mapping from $E$ to $F$ that obeys $f$:
+
+\[
+f(x_1 + x_2) = f(x_1) + f(x_2) \quad \forall x_1, x_2 \in E
+\]
+
+\[
+f(k \cdot x) = k \cdot f(x) \quad \forall x \in E, \forall k \in T
+\]
+
+\subsubsection{Theorem (Linear map)}
+
+Let $e_1, e_2, \ldots, e_n$ be a basis of $E$ and $f_1, f_2, \ldots, f_n$ be arbitrary vectors of $F$.
+
+Then there exists a unique linear mapping $f: E \to F$ such that:
+
+\[
+f(e_i) = f_i, \quad i = 1, \ldots, n
+\]
+
+\subsubsection{The matrix associated with a linear map}
+
+Let $E$ be an $n$-dimensional vector space, $F$ be an $m$-dimensional vector space, and $f$ be the linear map from $E$ to $F$.
+
+Let $e_1, e_2, \ldots, e_n$ be the basis vectors in $E$ and $g_1, g_2, \ldots, g_m$ be the basis vectors in $F$.
+
+The mapping $f$ maps $e_1, e_2, \ldots, e_n$ to $f(e_1), f(e_2), \ldots, f(e_n)$.
+
+Express $f(e_i)$ in terms of $g_1, g_2, \ldots, g_m$:
+
+\[
+f(e_1) = a_{11} g_1 + a_{12} g_2 + \ldots + a_{1m} g_m
+\]
+
+\[
+f(e_2) = a_{21} g_1 + a_{22} g_2 + \ldots + a_{2m} g_m
+\]
+
+\[
+\vdots
+\]
+
+\[
+f(e_n) = a_{n1} g_1 + a_{n2} g_2 + \ldots + a_{nm} g_m
+\]
+
+The matrix created by the row coordinates of $f(e_1), f(e_2), \ldots, f(e_n)$ is called the matrix associated with $f$ in the basis $e_1, e_2, \ldots, e_n$ and $g_1, g_2, \ldots, g_m$.
+
+This can be written as:
+
+\[
+f(e) = A \cdot g
+\]
+
+Calculate the coordinates of $f(x)$ in $F$:
+
+\[
+f(x) = f\left(\sum_{i=1}^n x_i e_i\right) = \sum_{i=1}^n x_i \cdot f(e_i)
+\]
+
+\[
+= \sum_{i=1}^n \sum_{j=1}^m a_{ij} g_j = \sum_{j=1}^m \left(\sum_{i=1}^n x_i \cdot a_{ij}\right) g_j
+\]
+
+\[
+f(x) = x \cdot A
+\]
+
+\subsubsection{Definition (Linear Transformation)}
+
+The linear transformation $A$ of vector space $E$ is a linear mapping from $E$ to $E$.
+
+The linear mapping $A$ from $E$ to $E$ satisfies:
+
+\[
+A(x_1 + x_2) = A(x_1) + A(x_2) \quad \forall x_1, x_2 \in E
+\]
+
+\[
+A(k \cdot x) = k \cdot A(x) \quad \forall x \in E, \forall k \in T
+\]
+
+\subsubsection{Theorem (The invariant subspace of linear transformation)}
+
+Every linear transformation in an $n$-dimensional real vector space $E$ ($n \geq 1$) has at least one 1-dimensional or 2-dimensional invariant subspace.
+
+
+\subsection{Eigenvalue – Eigenvector}
+
+\subsubsection{Definition (Eigenvalue – Eigenvector)}
+
+Let $A$ be the linear transformation of an $n$-dimensional vector space $E$.
+
+The subspace $E_1$ of $E$ is the invariant subspace of $A$ if $A$ transforms every vector $x$ of $E_1$ to a vector of $E_1$:
+
+\[
+A x = \lambda x
+\]
+
+Finding the eigenvector and the one-dimensional invariant subspace are equivalent problems:
+
+\[
+A(k x) = k A(x) = k (\lambda x) = \lambda (k x)
+\]
+
+\subsubsection{Calculation method (Eigenvalue – Eigenvector)}
+
+How to calculate eigenvalues and eigenvectors.
+
+Let $E$ be the basis of $E$, and let the matrix $A = [a_{ij}]$ be associated with the linear transformation $A$.
+
+Let vector $x$ be an eigenvector of $A$ corresponding to the eigenvalue $\lambda$, and its row coordinate $(x_1, x_2, \ldots, x_n)$.
+
+Suppose that the linear transform has $n$ independent eigenvectors.
+
+Suppose that $A$ is the linear transform, and $e_i$ are its $n$ independent eigenvectors.
+
+\[
+A e_i = \lambda_i e_i, \quad i = 1, 2, \ldots, n
+\]
+
+If $n$ eigenvectors are chosen as the basis vectors, then the matrix of the linear transformation is diagonal.
+
+
+
+\subsection{Linear form, Bilinear form, Quadratic form}
+\subsubsection{Definition (Linear forms)}
+
+Given vector space $E$ over the field $T$.
+
+The linear form on $E$ is the linear map from $E$ to $T$ that obeys $\phi$:
+
+\[
+\phi(x_1 + x_2) = \phi(x_1) + \phi(x_2) \quad \forall x_1, x_2 \in E
+\]
+
+\[
+\phi(k \cdot x) = k \cdot \phi(x) \quad \forall x \in E, \forall k \in T
+\]
+
+\subsubsection{Definition (Bilinear forms)}
+
+Given vector spaces $E$ and $F$ over the field $T$.
+
+The mapping $\phi$ from $E \times F$ to $T$.
+
+$\phi$ is the bilinear form on $E \times F$ if it is the linear form of $x$ when $y$ is fixed, and the linear form of $y$ when $x$ is fixed.
+
+1. \[
+\phi(x_1 + x_2, y) = \phi(x_1, y) + \phi(x_2, y)
+\]
+
+\[
+\phi(k \cdot x, y) = k \cdot \phi(x, y)
+\]
+
+2. \[
+\phi(x, y_1 + y_2) = \phi(x, y_1) + \phi(x, y_2)
+\]
+
+\[
+\phi(x, l \cdot y) = l \cdot \phi(x, y)
+\]
+
+Suppose that $E$ is an $n$-dimensional vector space, and $F$ is an $m$-dimensional vector space.
+
+$e_1, e_2, \ldots, e_n$ are the basis vectors of $E$,
+
+$f_1, f_2, \ldots, f_n$ are the basis vectors of $F$.
+
+\[
+\phi(x, y) = \phi(x_1 e_1 + x_2 e_2 + \ldots + x_n e_n, y_1 f_1 + y_2 f_2 + \ldots + y_n f_n)
+\]
+
+\[
+a_{ij} = \phi(e_i, f_j)
+\]
+
+The matrix is said to be the matrix representing the bilinear form in the basis vectors $e_1, e_2, \ldots, e_n$ and $f_1, f_2, \ldots, f_n$.
+
+$(x)$ is the row coordinate of $x$ in the basis vectors $e_1, e_2, \ldots, e_n$.
+
+$(y)$ is the row coordinate of $y$ in the basis vectors $f_1, f_2, \ldots, f_n$.
+
+\[
+\phi(x, y) = (x) A (y^T)
+\]
+
+Suppose that $e, f$ are the bases of $E$ and $F$ respectively, the matrix representing the bilinear form is $A$.
+
+In the new base $e'$ of $E$, $f'$ of $F$, the matrix representing the bilinear form is $A'$:
+
+\[
+A' = T A S^T
+\]
+
+$T, S$ are the transformation matrices from the old basis to the new ones.
+
+\[
+T \cdot e = e'
+\]
+
+\[
+S \cdot f = f'
+\]
+
+If $\phi$ is the bilinear form on $E \times E$ then:
+
+\[
+A' = T A T^T
+\]
+
+$T$ is the transition matrix from the old basis to the new one in $E$.
+
+\[
+\phi(x, y) = (x) A (y^T) = (x') T A (y'^T) T = (x') (T A T^T) (y')
+\]
+
+
+\subsubsection{Definition (Quadratic forms)}
+
+Given vector space $E$ over the field $T$.
+
+$\phi$ is the bilinear form on $E \times E$.
+
+The quadratic form $w$ associated with $\phi$ is the mapping $w$ from $E$ to $T$:
+
+\[
+w(x) = \phi(x, x) \quad \forall x \in E, \quad w(x) \in T
+\]
+
+Suppose that $E$ is an $n$-dimensional vector space, and $e_1, e_2, \ldots, e_n$ are the basis vectors of $E$.
+
+\[
+w(x) = \phi(x, x) = \phi\left(\sum_{i=1}^n x_i e_i, \sum_{j=1}^n x_j e_j\right) = \sum_{i=1}^n \sum_{j=1}^n x_i x_j \phi(e_i, e_j)
+\]
+
+\[
+w(x) = (x) A (x^T)
+\]
+
+where $A = [\phi(e_i, e_j)]$.
+
+If in $E$, $T$ is the transition matrix from the old basis to the new basis, then the quadratic form in the new basis is:
+
+\[
+w(x) = (x) A (x^T) = (x')^T A (x') = (x')^T A' (x')
+\]
+
+where $A' = T A T^T$.
+
+
+\subsubsection{Transform the quadratic form to the canonical form}
+
+Consider the quadratic form on an $n$-dimensional vector space $E$ over the field $T$.
+
+Prove that in $E$, there are basis vectors $f_1, f_2, \ldots, f_n$ such that
+
+if
+
+\[
+x = \sum_{i=1}^n u_i f_i
+\]
+
+then
+
+\[
+w(x) = k_1 u_1^2 + k_2 u_2^2 + \ldots + k_n u_n^2
+\]
+
+where $k_1, k_2, \ldots, k_n$ are elements of the field $T$.
+
+
+
+
+\subsection{Symmetry Transformation}
+
+\subsubsection{Definition (Euclidean space)}
+
+A vector space $E$ is called a Euclidean space if:
+
+For each pair $(x, y)$ of $E$ corresponding to a real number called the dot product of $x, y$ obeys:
+
+\[
+\langle x, y \rangle = \langle y, x \rangle
+\]
+
+\[
+\langle x_1 + x_2, y \rangle = \langle x_1, y \rangle + \langle x_2, y \rangle
+\]
+
+\[
+\langle kx, y \rangle = k \langle x, y \rangle \quad \forall k
+\]
+
+\[
+\langle x, x \rangle > 0 \quad \text{if} \quad x \neq 0
+\]
+
+\[
+\langle x, x \rangle = 0 \quad \text{if} \quad x = 0
+\]
+
+
+\subsubsection{Dot product is the bilinear form}
+
+In an $n$-dimensional vector space $E$, let $e_1, e_2, \ldots, e_n$ be the basis vectors.
+
+Then:
+
+\[
+x = \sum_{i=1}^n x_i e_i, \quad y = \sum_{j=1}^n y_j e_j
+\]
+
+\[
+\langle x, y \rangle = \left\langle \sum_{i=1}^n x_i e_i, \sum_{j=1}^n y_j e_j \right\rangle = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \langle e_i, e_j \rangle
+\]
+
+\subsubsection{Definition (Symmetric operator)}
+
+The linear transformation $A$ of Euclidean space $E$ is said to be symmetric if:
+
+For every pair of vectors $x, y$ of $E$, we have:
+
+\[
+\langle Ax, y \rangle = \langle x, Ay \rangle
+\]
+
+
+
+\subsubsection{Diagonalize the transformation matrix of the symmetric operator}
+
+$A$ is symmetric $\Rightarrow$ dimensional invariant subspace $\Rightarrow$ construct an orthogonal basis
+
+$A - \lambda I = 0$ has a real root $\Rightarrow$ There exists a 1-dimensional invariant subspace of eigenvectors $\Rightarrow$ transformation matrix is diagonalized.
+
+- The characteristic root of symmetric transformations are real.
+- Every symmetric transformation has at least one 1-dimensional invariant subspace because it has a real root of the characteristic polynomial.
+- $A$ is symmetric $\Rightarrow$ Find out the orthogonal matrix $T$ such that $TAT^{-1}$ is diagonal, diagonal elements are the characteristic root of $A$, each root taken a number of times equal to its multiplicity.
+
+\subsubsection{Reduce the quadratic form to the canonical form}
+
+**Theorem**:
+
+In the $n$-dimensional Euclidean space $E$, every quadratic form can be reduced to a unique canonical form by the orthogonal transformation. The eigenvalues of $A$ are the eigenvalues of the quadratic form.
+
+\[
+w(x) = \sum_{i=1}^n \lambda_i u_i^2
+\]
+
+In the $n$-dimensional Euclidean space $E$, the quadratic form $w(x)$ is given by:
+
+\[
+\phi(x, y) = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j)
+\]
+
+where $\phi(x, y)$ is the symmetric bilinear form for $w(x)$.
+
+In $E$, choose the orthogonal basis $e_1, e_2, \ldots, e_n$:
+
+\[
+\phi(x, y) = \sum_{i=1}^n x_i e_i, \sum_{j=1}^n y_j e_j = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \langle e_i, e_j \rangle
+\]
+
+\[
+a_{ij} = \phi(e_i, e_j) = \phi(e_j, e_i) = a_{ji}
+\]
+
+\[
+z_j = \sum_{i=1}^n x_i a_{ij}, \quad j = 1, 2, \ldots, n
+\]
+
+\[
+z = Ax
+\]
+
+The linear transformation $A$ is symmetric because its transformation in the orthogonal basis system is symmetric. According to the invariant subspace theorem of the symmetric transformation, in $E$ there is an orthogonal basis of the eigenvectors of $A$: $f_1, f_2, \ldots, f_n$.
+
+In this basis:
+
+\[
+x = \sum_{i=1}^n u_i f_i, \quad y = \sum_{j=1}^n v_j f_j
+\]
+
+\[
+\phi(x, y) = \langle Ax, y \rangle = \langle A \sum_{i=1}^n u_i f_i, \sum_{j=1}^n v_j f_j \rangle = \sum_{i=1}^n \lambda_i u_i v_i
+\]
+
+\[
+w(x) = \phi(x, x) = \sum_{i=1}^n \lambda_i u_i^2
+\]
+
+\subsection{Applications}
 
 \section{Chapter 4. Optimization Method}
 \subsection{The role of optimization method in VDA}
