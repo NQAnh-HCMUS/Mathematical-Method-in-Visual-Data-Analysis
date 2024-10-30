@@ -872,8 +872,7 @@ Không gian $M_{m \times n}$ bao gồm tất cả các ma trận kích thước 
 \end{itemize}
 
 \subsection{Linear map, Linear Transformation}
-
-\subsubsection{Definition (Linear map)}
+\subsubsection{Definition (Linear map) - Ánh xạ tuyến tính}
 
 Given vector spaces $E$ and $F$ over the field $T$.
 
@@ -922,7 +921,29 @@ Express $f(e_i)$ in terms of $g_1, g_2, \ldots, g_m$:
     \end{matrix}
 \end{equation*}
 
+or
 
+\begin{equation*}
+    \begin{bmatrix}
+        f(e_1)\\
+        f(e_2)\\
+        \vdots\\
+        f(e_n)
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        a_{11} & a_{12} & \ldots & a_{1m}\\
+        a_{21} & a_{22} & \ldots & a_{2m}\\
+        \vdots & \vdots & \ddots & \vdots\\
+        a_{n1} & a_{n2} & \ldots & a_{nm}
+    \end{bmatrix}
+    \begin{bmatrix}
+        g_1\\
+        g_2\\
+        \vdots\\
+        g_m
+    \end{bmatrix}
+\end{equation*} 
 The matrix created by the row coordinates of $f(e_1), f(e_2), \ldots, f(e_n)$ is called the matrix associated with $f$ in the basis $e_1, e_2, \ldots, e_n$ and $g_1, g_2, \ldots, g_m$.
 
 $\rightarrow$ This can be written as:
@@ -936,10 +957,21 @@ Calculate the coordinates of $f(x)$ in $F$:
 \begin{equation*}
     f(x) = f\left(\sum_{i=1}^n x_i e_i\right) = \sum_{i=1}^n x_i \cdot f(e_i) = \sum_{i=1}^n \sum_{j=1}^m a_{ij} g_j = \sum_{j=1}^m \left(\sum_{i=1}^n x_i \cdot a_{ij}\right) g_j
 \end{equation*}
-
 \[
     \Rightarrow f(x) = x \cdot A
 \]
+
+or
+\begin{equation*}
+    \begin{bmatrix}
+        f(x_1)\\
+        f(x_2)\\
+        \vdots\\
+        f(x_n)
+    \end{bmatrix}
+\end{equation*}
+\textbf{Q: Ứng dụng của phương trình trong khoa học thị giác?}\\
+A: "tìm vị trí định vị" của robot
 
 \subsubsection{Definition (Linear Transformation)}
 
@@ -960,9 +992,9 @@ A(k \cdot x) = k \cdot A(x) \quad \forall x \in E, \forall k \in T
 Every linear transformation in an $n$-dimensional real vector space $E$ ($n \geq 1$) has at least one 1-dimensional or 2-dimensional invariant subspace.
 
 
-\subsection{Eigenvalue – Eigenvector}
+\subsection{Eigenvalue - Eigenvector}
 
-\subsubsection{Definition (Eigenvalue – Eigenvector)}
+\subsubsection{Definition (Eigenvalue - Eigenvector)}
 
 Let $A$ be the linear transformation of an $n$-dimensional vector space $E$.
 
@@ -989,9 +1021,26 @@ A(k x) = k A(x) = k (\lambda x) = \lambda (k x)
     \end{equation*}
     \begin{equation*}
         (x)A = \lambda (x)
+    \end{equation*}    
+    \begin{equation*}
+        (x) = \begin{bmatrix}
+            x_1 & x_2 & \dots & x_n
+        \end{bmatrix}, 
+        \quad A = \begin{bmatrix}
+            a_{11} & a_{21} & \dots & a_{n1}\\
+            a_{12} & a_{22} & \dots & a_{n2}\\
+            \vdots & \vdots & \ddots & \vdots\\
+            a_{1n} & a_{2n} & \dots & a_{nn}
+        \end{bmatrix} 
     \end{equation*}
     \begin{align*}
-        &\begin{cases}
+        (x)A 
+        &= [(x_1a_{11} + x_2a_{21} + \ldots + x_na_{n1}), (x_1a_{12} + x_2a_{22} + \ldots + x_na_{n2}),\\
+        &\ldots, (x_1a_{1n} + x_2a_{2n} + \ldots + x_na_{nn})]\\
+        &= \lambda[x_1, x_2, \ldots, x_n] = \lambda (x)
+    \end{align*}
+    \begin{equation*}
+        \begin{cases}
             x_1a_{11}+ x_2a_{21} + \ldots + x_n a_{n1} = \lambda x_1\\
             x_1a_{12}+ x_2a_{22} + \ldots + x_n a_{n2} = \lambda x_2\\
             \vdots\\
@@ -1003,7 +1052,9 @@ A(k x) = k A(x) = k (\lambda x) = \lambda (k x)
             \vdots\\
             x_1a_{1n} + x_2a_{2n} + \ldots + x_n(a_{nn} - \lambda) = 0
         \end{cases}\\
-        &\Rightarrow \begin{vmatrix}
+    \end{equation*}
+    \begin{equation*}
+        \Rightarrow \begin{vmatrix}
             a_{11} - \lambda & a_{21} & \ldots & a_{n1}\\
             a_{12} & a_{22} - \lambda & \ldots & a_{n2}\\
             \vdots & \vdots & \ddots & \vdots\\
@@ -1014,8 +1065,8 @@ A(k x) = k A(x) = k (\lambda x) = \lambda (k x)
             a_{21} & a_{22} - \lambda & \ldots & a_{2n}\\
             \vdots & \vdots & \ddots & \vdots\\
             a_{n1} & a_{n2} & \ldots & a_{nn} - \lambda
-        \end{vmatrix} = 0
-    \end{align*}
+        \end{vmatrix} = 0   
+    \end{equation*}
 \end{enumerate}
 
 
