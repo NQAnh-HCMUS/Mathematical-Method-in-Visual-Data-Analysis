@@ -1387,13 +1387,36 @@ The linear transformation $A$ is symmetric because its transformation in the ort
 
 In this basis:
 \begin{align*}
-    x &= \sum_{i=1}^n u_i f_i, \quad y = \sum_{j=1}^n v_j f_j\\
+    x = \sum_{i=1}^n u_i f_i, &\quad y = \sum_{j=1}^n v_j f_j\\
     \varphi(x, y) = \langle Ax, y \rangle 
     &= \left\langle A \left(\sum_{i=1}^n u_i f_i\right), \sum_{j=1}^n v_j f_j \right\rangle\\
     &= \left\langle \left(\sum_{i=1}^n u_i (Af_i)\right), \sum_{j=1}^n v_j f_j \right\rangle\\
     &= \left\langle \left(\sum_{i=1}^n \lambda_i u_i v_i\right), \sum_{j=1}^n v_j f_j \right\rangle\\
     &= \sum_{i=1}^n \lambda_i u_i v_i\\
-    w(x) &= \phi(x, x) = \sum_{i=1}^n \lambda_i u_i^2\\
+    w(x) &= \varphi(x, x) = \sum_{i=1}^n \lambda_i u_i^2\\
+\end{align*}
+\textbf{Q: $w(x) = 2x_2x_3 + 2x_3x_1 + 2x_1x_2$}\\
+A: \begin{align*}
+    w(x) &= 2x_2x_3 + 2x_3x_1 + 2x_1x_2\\
+    &= \begin{pmatrix}
+        x_1 & x_2 & x_3
+    \end{pmatrix}
+    \begin{pmatrix}
+        0 & 1 & 1\\
+        1 & 0 & 0\\
+        1 & 1 & 0
+    \end{pmatrix}
+    \begin{pmatrix}
+        x_1\\
+        x_2\\
+        x_3
+    \end{pmatrix}\\
+    & |A - \lambda I| = \begin{vmatrix}
+        -\lambda & 1 & 1\\
+        1 & -\lambda & 0\\
+        1 & 1 & -\lambda
+    \end{vmatrix} = (1+\lambda)^2(2 - \lambda) \\
+    &w(x) = 2u_1^2 - u_2^2 - u_3^2 = (u_1u_2u_3)T
 \end{align*}
 
 \subsection{Applications}
