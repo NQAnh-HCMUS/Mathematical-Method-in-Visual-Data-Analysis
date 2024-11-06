@@ -1110,15 +1110,12 @@ If $n$ eigenvectors are chosen as the basis vectors, then the matrix of the line
 Given vector space $E$ over the field $T$.
 
 The linear form on $E$ is the linear map from $E$ to $T$ that obeys:
-
 \[
 \varphi(x_1 + x_2) = \varphi(x_1) + \varphi(x_2) \quad \forall x_1, x_2 \in E
 \]
-
 \[
 \varphi(k \cdot x) = k \cdot \varphi(x) \quad \forall x \in E, \forall k \in T
 \]
-
 \subsubsection{Definition (Bilinear forms)}
 
 Given vector spaces $E$ and $F$ over the field $T$.
@@ -1149,9 +1146,33 @@ The matrix $A = [a_{ij}]$ is said to be the matrix representing the bilinear for
 $(x)$ is the row coordinate of $x$ in the basis vectors $e_1, e_2, \ldots, e_n$.
 
 $(y)$ is the row coordinate of $y$ in the basis vectors $f_1, f_2, \ldots, f_n$.
-\[
-\varphi(x, y) = (x) A (y^T)
-\]
+\begin{align*}
+    \varphi(x, y) &= (x) A (y^T)\\
+    &= \begin{bmatrix}
+        x_1 & x_2 & \ldots & x_n
+    \end{bmatrix}
+    \begin{bmatrix}
+        a_{11} & a_{12} & \ldots & a_{1n}\\
+        a_{21} & a_{22} & \ldots & a_{2n}\\
+        \vdots & \vdots & \ddots & \vdots\\
+        a_{n1} & a_{n2} & \ldots & a_{nn}
+    \end{bmatrix}
+    \begin{bmatrix}
+        y_1\\
+        y_2\\
+        \vdots\\
+        y_n
+    \end{bmatrix}\\
+    &= \begin{bmatrix}
+        x_1 & x_2 & \ldots & x_n
+    \end{bmatrix}
+    \begin{bmatrix}
+        a_{11}y_1 + a_{12}y_2 + \ldots + a_{1n}y_n\\
+        a_{21}y_1 + a_{22}y_2 + \ldots + a_{2n}y_n\\
+        \vdots \\
+        a_{n1}y_1 + a_{n2}y_2 + \ldots + a_{nn}y_n
+    \end{bmatrix}
+\end{align*}
 
 Suppose that $e, f$ are the bases of $E$ and $F$ respectively, the matrix representing the bilinear form is $A$.
 
@@ -1175,9 +1196,16 @@ A' = T A T^T
 \]
 
 $T$ is the transition matrix from the old basis to the new one in $E$.
-\[
-\varphi(x, y) = (x) A (y^T) = (x') T A (y'^T) T = (x') (T A T^T) (y')
-\]
+\begin{align*} 
+\varphi(x, y) &= (x) \quad A \quad (y^T)\\
+&= (x') T A (y'^T) T \\
+&= (x') (T A T^T) (y')
+\end{align*}
+with
+\begin{align*}
+   (x) &= (x')T\\
+   x &= (x')e'=x'Te
+\end{align*}
 
 
 \subsubsection{Definition (Quadratic forms)}
@@ -1190,7 +1218,14 @@ The quadratic form $w$ associated with $\varphi$ is the mapping $w$ from $E$ to 
 \[
 w(x) = \phi(x, x) \quad \forall x \in E, \quad w(x) \in T
 \]
-
+\begin{align*}
+    w(x)=\begin{bmatrix}
+        x_1a_11 + x_2a_12 + \ldots + x_na_1n\\
+        x_1a_21 + x_2a_22 + \ldots + x_na_2n\\
+        \vdots\\
+        x_1a_n1 + x_2a_n2 + \ldots + x_na_nn
+    \end{bmatrix}
+\end{align*}
 Suppose that $E$ is an $n$-dimensional vector space, and $e_1, e_2, \ldots, e_n$ are the basis vectors of $E$.
 
 \[
@@ -1204,36 +1239,75 @@ w(x) = (x) A (x^T)
 where $A = [\varphi(e_i, e_j)]$.
 
 If in $E$, $T$ is the transition matrix from the old basis to the new basis, then the quadratic form in the new basis is:
-
-\[
-w(x) = (x) A (x^T) = (x')T A ((x')T)^T = (x')T AT^T (x')^T
-\]
+\begin{align*}
+    w(x) &= (x)A(x^T) = (x')T A ((x')T)^T = (x')T AT^T (x')^T\\
+    &= \begin{bmatrix}
+        x_1 & x_2 & x_3
+    \end{bmatrix}
+    \begin{bmatrix}
+        a_{11} & a_{12} & a_{13}\\
+        a_{21} & a_{22} & a_{23}\\
+        a_{31} & a_{32} & a_{33}
+    \end{bmatrix}
+    \begin{bmatrix}
+        x_1\\
+        x_2\\
+        x_3
+    \end{bmatrix}\\
+    &=\begin{bmatrix}
+        x_1 & x_2 & x_3
+    \end{bmatrix}
+    \begin{bmatrix}
+        a_{11}x_1 + a_{12}x_1 + a_{13}x_1\\
+        a_{21}x_2 + a_{22}x_2 + a_{23}x_2\\
+        a_{31}x_3 + a_{32}x_3 + a_{33}x_3
+    \end{bmatrix}\\
+    &= a_{11}x_1^2 + a_{12}x_1^2 + a_{13}x_1^2 + 2(a_{21}x_2^2 + a_{22}x_2^2 + a_{23}x_2^2) + a_{n1}x_n^2 + a_{n2}x_n^2 + a_{n3}x_n^2
+\end{align*}
 
 where $A' = T A T^T$.
 
-
 \subsubsection{Transform the quadratic form to the canonical form}
-
 Consider the quadratic form on an $n$-dimensional vector space $E$ over the field $T$.
 
 Prove that in $E$, there are basis vectors $f_1, f_2, \ldots, f_n$ such that
 
 if
-
-\[
-x = \sum_{i=1}^n u_i f_i
-\]
-
+\begin{equation*}
+    x = \sum_{i=1}^n u_i f_i
+\end{equation*}
 then
-
 \[
 w(x) = k_1 u_1^2 + k_2 u_2^2 + \ldots + k_n u_n^2
 \]
-
 where $k_1, k_2, \ldots, k_n$ are elements of the field $T$.
+\begin{align*}
+    x &= \sum x_i e_i \Rightarrow w(x) = a_{ij}x_ix_j\\
+    a_{11} &\neq 0 \\
+    w(x) &= a_{11}\left(x_1^2 + 2\frac{a_{12}}{a_{11}}x_1x_2 + \ldots + 2\frac{a_{1n}}{a_{11}}x_1x_n \right) + g(x_2, \ldots, x_n)\\
+    &= a_{11}\left[x_1^2 + 2x_1\left(\frac{a_{12}}{a_{11}}x_2 + \ldots + \frac{a_{1n}}{a_{11}}x_n\right)\right] + g(x_2, \ldots, x_n)\\
+    &= a_{11}\left(x_1 + \frac{a_{12}x_2 + \ldots + a_{1n}x_n}{a_{11}}\right)^2 - \frac{(a_{12}x_2 + \ldots + a_{1n}x_n)}{a_{11}^2}+ g(x_2, \ldots, x_n)\\
+    f_1(x_2, \ldots, x_n) &= \sum_{i=2}^n \sum_{j=2}^n a_{ij}x_ix_j\\
+    w(x) &= a_{11}\left(x_1 + \frac{a_{12}x_2 + \ldots + a_{1n}x_n}{a_{11}}\right)^2 + \sum\sum a'_{ij}x_ix_j\\
+    \textrm{Mà }y_1 &= x_1, \quad y_2 = x_2  \ldots, y_n = x_n\\
+    w(x) &= a_{11}y_1^2 + \sum^n_{i=2} \sum^n_{j=2} a'_{ij}y_iy_j
+\end{align*}
 
-
-
+\textbf{Q: $w(x) = x_1^2 - 2x_1x_2 + x_2^2+4x_1x_3 + 4x_3^2 + 2x_2x_3$}\\
+A: \begin{align*}
+    w(x) &= x_1^2 - 2x_1x_2 + x_2^2 - 4x_1x_3 + 4x_3^2 + 2x_2x_3\\
+    &= (x_1^2 - 2x_1x_2 - 4x_1x_3) + (x_2^2 + 2x_2x_3 + 4x_3^2)\\
+    &= [x_1^2 - 2x_1(x_2 + 2x_3)] + (x_2^2 + 2x_2x_3 + 4x_3^2)\\
+    &= [x_1^2 - 2x_1(x_2 + 2x_3) + (x_2 + 2x_3)^2 - (x_2 + 2x_3)^2] + (x_2^2 + 2x_2x_3 + 4x_3^2)\\
+    &= (x_1 - x_2 - 2x_3)^2 - (x_2 + 2x_3)^2 + x_2^2 + 2x_2x_3 + 4x_3^2\\
+    &= (x_1 - x_2 - 2x_3)^2 - (x_2 + 2x_3)^2 + x_2^2 + 4x_2x_3 + 4x_3^2 - 2x_2x_3\\
+    &= (x_1 - x_2 - 2x_3)^2 - (x_2 + 2x_3)^2 + (x_2 + 2x_3)^2 - 2x_2x_3\\
+    &= (x_1 - x_2 - 2x_3)^2 - 2x_2x_3\\
+    &= y_1^2 + 6y_2y_3\\
+    &\textrm{Set } y_1 = z_1, y_2 = z_2 + z_3, y_3 = z_2 - z_3\\
+    &= z_1^2 + 6(z_2 + z_3)(z_2 - z_3)\\
+    &= z_1^2 + 6(z_2^2 - z_3^2)
+\end{align*}
 
 \subsection{Symmetry Operators}
 
@@ -1249,17 +1323,22 @@ For each pair $(x, y)$ of $E$ corresponding to a real number called the dot prod
     \langle x, x \rangle &> 0 \quad \text{if} \quad x \neq 0\\
     \langle x, x \rangle &= 0 \quad \text{if} \quad x = 0
 \end{align*}
-
+\begin{align*}
+    x = (x_1, x_2, \ldots, x_n), &\quad y = (y_1, y_2, \ldots, y_n)\\
+    \langle x, y \rangle &= \sum_{i=1}^n x_iy_j\\
+    \Rightarrow \langle y, x \rangle = y_1x_1 + y_2x_2 + \ldots + y_nx_n &= x_1y_1 + x_2y_2 + \ldots + x_ny_n = \langle x, y \rangle
+\end{align*}
 \subsubsection{Dot product is the bilinear form}
 
 In an $n$-dimensional vector space $E$, let $e_1, e_2, \ldots, e_n$ be the basis vectors.
 
 Then:
 
+Tổ hợp tuyến tính của các vector $x, y$:
 \[
 x = \sum_{i=1}^n x_i e_i, \quad y = \sum_{j=1}^n y_j e_j
 \]
-
+Tích vô hướng
 \[
 \langle x, y \rangle = \left\langle \sum_{i=1}^n x_i e_i, \sum_{j=1}^n y_j e_j \right\rangle = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \langle e_i, e_j \rangle
 \]
@@ -1269,10 +1348,12 @@ x = \sum_{i=1}^n x_i e_i, \quad y = \sum_{j=1}^n y_j e_j
 The linear transformation $A$ of Euclidean space $E$ is said to be symmetric if:
 
 For every pair of vectors $x, y$ of $E$, we have:
+\begin{equation*}
+    \langle Ax, y \rangle = \langle x, Ay \rangle
+\end{equation*}
+\textbf{Q: Prove $\langle Ax, y \rangle = \langle x, Ay \rangle$}\\
+A:
 
-\[
-\langle Ax, y \rangle = \langle x, Ay \rangle
-\]
 
 \subsubsection{Diagonalize the transformation matrix of the symmetric operator}
 
