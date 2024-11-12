@@ -291,134 +291,103 @@ A:
 
 
 Dataset for VLM
-
+\newpage
 \section{Lecture 2. Metric Space}
 \subsection{The Role of Metric Space in VDA}
 \subsection{The Basic Concepts in Metric Space}
-\pagebreak
 \subsubsection{Metric Space}
-
 Metric space $(X, d)$ is space $(X)$ together with a real-valued function \(d\), \(d: X \times X \rightarrow \mathbb{R}\), which measures the distance between pairs of points \(x\) and \(y\) in \(X\).\\
  \(d\) obeys the following axioms:
-
 \begin{itemize}
     \item[(i)] \(0 < d(x, y) < \infty \quad \forall x, y \in X, x \neq y\)
     \item[(ii)] \(d(x, x) = 0 \quad \forall x \in X\)
     \item[(iii)] \(d(x, y) = d(y, x) \quad \forall x, y \in X\)
     \item[(iv)] \(d(x, y) \leq d(x, z) + d(z, y) \quad \forall x, y, z \in X\)
 \end{itemize}
-
 Such a function \(d\) is called a metric.
 
 \subsubsection{Cauchy sequences}
-
-A sequence of points \(\{x_n\}_{n=1}^\infty\) in a metric space \(X, d\) is called a Cauchy sequence if:
-
+A sequence of points \(\{x_n\}_{n=1}^\infty\) in a metric space $(X, d)$ is called a Cauchy sequence if:
 \[
-\forall \epsilon > 0, \exists N > 0 \text{ such that } d(x_n, x_m) < \epsilon \quad \forall n, m > N
+\forall \varepsilon > 0, \exists N > 0 \text{ such that } d(x_n, x_m) < \varepsilon \quad \forall n, m > N
 \]
 \subsubsection{Convergent sequence}
-
-A sequence of points \(\{x_n\}_{n=1}^\infty\) is said to converge to a point \(x \in X\) in metric space \(X, d\) if:
-
+A sequence of points \(\{x_n\}_{n=1}^\infty\) is said to converge to a point \(x \in X\) in metric space $(X, d)$ if:
 \[
-\forall \epsilon > 0, \exists N > 0 \text{ so that } d(x_n, x) < \epsilon \quad \forall n > N
+\forall \varepsilon > 0, \exists N > 0 \text{ so that } d(x_n, x) < \varepsilon \quad \forall n > N
 \]
-
 \(x \in X\), to which the sequence converges, is called the limit of the sequence, and we use the notation:
-
-\[
+\begin{equation*}
 x = \lim_{n \to \infty} x_n
-\]
+\end{equation*}
 
-\pagebreak
 \subsubsection{Complete Metric Space}
-
 \textbf{Theorem 1}. (\textit{Convergent sequence \& Cauchy sequence})
 
-A sequence of points \(\{x_n\}_{n=1}^\infty\) in metric space \(X, d\) converges to a point \(x \in X\), then \(\{x_n\}_{n=1}^\infty\) is a Cauchy sequence.
+A sequence of points \(\{x_n\}_{n=1}^\infty\) in metric space $(X, d)$ converges to a point \(x \in X\), then \(\{x_n\}_{n=1}^\infty\) is a Cauchy sequence.
 
 \textbf{Definition 4}. (\textit{Complete metric space})
 
-A metric space \(X, d\) is complete if every Cauchy sequence \(\{x_n\}_{n=1}^\infty\) in \(X\) has a limit \(x \in X\).
+A metric space $(X, d)$ is complete if every Cauchy sequence \(\{x_n\}_{n=1}^\infty\) in \(X\) has a limit \(x \in X\).
 
 \subsubsection{Metric space Hausdorff}
-
-Let \(X, d\) be a complete metric space. Then \(\mathcal{H}(X)\) denotes the space whose points are the compact subsets of \(X\), other than the empty set.
+Let $(X, d)$ be a complete metric space. Then \(\mathcal{H}(X)\) denotes the space whose points are the compact subsets of \(X\), other than the empty set.
 
 \textbf{Definition 6}. (\textit{Metric in space Hausdorff})
 
-Let \(X, d\) be a complete metric space. Let \(A, B \in \mathcal{H}(X)\). The Hausdorff distance between points \(A\) and \(B\) in \(\mathcal{H}(X)\) is defined by:
-
-\[
-h(A, B) = \max\{d(A, B), d(B, A)\}
-\]
-
-where
-
-\[
-d(A, B) = \max\{d(x, B) : x \in A\}
-\]
-
-\[
-d(x, B) = \min\{d(x, y) : y \in B\}
-\]
+Let $(X, d)$ be a complete metric space. Let \(X \in \mathcal{H}(X)\). The Hausdorff distance between points \(A\) and \(B\) in \(\mathcal{H}(X)\) is defined by:
+\begin{align*}
+h(A, B) &= \max\{d(A, B), d(B, A)\}\\
+\textrm{where }&\\
+d(A, B) &= \max\{d(x, B) : x \in A\}\\
+d(x, B) &= \min\{d(x, y) : y \in B\}
+\end{align*}
 
 \textbf{Theorem 2}. (\textit{The completeness of metric space Hausdorff})
+Let $(X, d)$ be a complete space metric. Then \((\mathcal{H}(X), h_d)\) is a complete metric space. 
 
-Let \(X, d\) be a complete metric space. Then \((\mathcal{H}(X), h_d)\) is a complete metric space. Moreover, if \(\{A_n \in \mathcal{H}(X)\}_{n=1}^\infty\) is a Cauchy sequence then:
-
-\[
-A = \lim_{n \to \infty} A_n \in \mathcal{H}(X)
-\]
-
-\[
-A = \{x \in X : \exists \text{ a Cauchy sequence } \{x_n \in A_n\} \rightarrow x\}
-\]
+Moreover, if \(\{A_n \in \mathcal{H}(X)\}_{n=1}^\infty\) is a Cauchy sequence then:
+\begin{align*}
+    A &= \lim_{n \to \infty} A_n \in \mathcal{H}(X)\\
+    A &= \{x \in X : \exists \text{ a Cauchy sequence } \{x_n \in A_n\} \rightarrow x\}
+\end{align*}
 
 \pagebreak
 \subsubsection{Contraction mapping and fixed point}
-
 \textbf{Definition 1}. (\textit{Contraction mapping})
 
-A transformation \(f: X \rightarrow X\) on a metric space \(X, d\) is called contractive or a contraction mapping if:
-
+A transformation \(f: X \rightarrow X\) on a metric space $(X, d)$ is called contractive or a contraction mapping if:
 \[
 \exists s, 0 \leq s < 1 \text{ such that } d(f(x), f(y)) \leq s \cdot d(x, y) \quad \forall x, y \in X
 \]
-
 Any such number \(s\) is called a contractivity factor for \(f\).
 
 \textbf{Theorem 3}. (\textit{Contraction mapping})
 
-Let \(f: X \rightarrow X\) be a contraction mapping on a complete metric space \(X, d\). Then \(f\) possesses exactly one fixed point \(x_f \in X\) and moreover for any point \(x \in X\), the sequence \(\{f^n(x)\} \rightarrow x_f\). That is:
-
+Let \(f: X \rightarrow X\) be a contraction mapping on a complete metric space $(X, d)$. Then \(f\) possesses exactly one fixed point \(x_f \in X\) and moreover for any point \(x \in X\), the sequence \(\{f^{0n}(x)\} \rightarrow x_f\). That is:
 \[
-\lim_{n \to \infty} f^n(x) = x_f \quad \forall x \in X
+\lim_{n \to \infty} f^{0n}(x) = x_f \quad \forall x \in X
 \]
 
 \textbf{Theorem 4}. (\textit{Fixed point approximation})
 
-Let \(f: X \rightarrow X\) be a contraction mapping on a complete metric space \(X, d\) with contractivity factor \(s\). The fixed point \(x_f\) is approximated by the following expression:
-
+Let \(f: X \rightarrow X\) be a contraction mapping on a complete metric space $(X, d)$ with contractivity factor \(s\). The fixed point \(x_f\) is approximated by the following expression:
 \[
 d(f^n(x), x_f) \leq \frac{s^n}{1 - s} d(x, f(x)) \quad \forall x \in X
 \]
 
 \textbf{Theorem 5}. (\textit{Approximate \(x\) by fixed point})
 
-Let \(f: X \rightarrow X\) be a contraction mapping on a complete metric space \(X, d\) with contractivity factor \(s\), fixed point \(x_f \in X\). Then:
-
+Let \(f: X \rightarrow X\) be a contraction mapping on a complete metric space $(X, d)$ with contractivity factor \(s\), fixed point \(x_f \in X\). Then:
 \[
 d(x, x_f) \leq \frac{1}{1 - s} d(x, f(x)) \quad \forall x \in X
 \]
 
 \pagebreak
 \subsubsection{Contraction mapping on metric space Hausdorff}
-
 \textbf{Lemma 1}. (\textit{Contraction mapping})
 
-Let \(f: X \rightarrow X\) be a contraction mapping on a complete metric space \(X, d\) with contractivity factor \(s\). Then \(w: \mathcal{H}(X) \rightarrow \mathcal{H}(X)\) defined by:
+Let \(f: X \rightarrow X\) be a contraction mapping on a complete metric space $(X, d)$ with contractivity factor \(s\). Then \(w: \mathcal{H}(X) \rightarrow \mathcal{H}(X)\) defined by:
 
 \[
 w(B) = \{w(x) : x \in B\} \quad \forall B \in \mathcal{H}(X)
@@ -428,7 +397,7 @@ is a contraction mapping on \(\mathcal{H}(X), h(d)\) with contractivity factor \
 
 \textbf{Lemma 2}. (\textit{Contraction mapping sequence})
 
-Let \(X, d\) be a metric space. Let \(\{w_n\}_{n=1}^\infty\) be contraction mappings on \(\mathcal{H}(X), h(d)\) with contractivity factor for \(w_n\) denoted by \(s_n\) for each \(n\). Define \(W: \mathcal{H}(X) \rightarrow \mathcal{H}(X)\) by:
+Let $(X, d)$ be a metric space. Let \(\{w_n\}_{n=1}^\infty\) be contraction mappings on \(\mathcal{H}(X), h(d)\) with contractivity factor for \(w_n\) denoted by \(s_n\) for each \(n\). Define \(W: \mathcal{H}(X) \rightarrow \mathcal{H}(X)\) by:
 
 \[
 W(B) = w_1(B) \cup w_2(B) \cup \ldots \cup w_N(B)
@@ -472,7 +441,7 @@ A: self-similarity (đặc tính tự tương tự)
 \end{align*}
 $\rightarrow$ tính chất tự phân hình (tính chất fractal)
 
-\textbf{Q: Lí giải vì sao cho B nào cx quay về A?}\\
+\textbf{Q: Lí giải vì sao cho giá trị B nào cx quay về A?}\\
 A:
 
 \textbf{Theorem 7}. (\textit{Approximate fixed set in metric space Hausdorff})
@@ -630,7 +599,8 @@ HOHUI Quốc Ngpo 12023
 
 
 \pagebreak
-\subsection{Lecture 3. Apply metric space to VDA}
+\subsection{Lecture 3. Apply 
+metric space to VDA}
 \subsubsection {Drawing based on Fractal geometry}
 \textbf{3.1.1}. Computing Fractals from Iterated Function Systems
 

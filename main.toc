@@ -11,9 +11,9 @@
 \contentsline {subsection}{\numberline {1.3}Vision-Language Pre-trained Model}{8}{subsection.1.3}%
 \contentsline {subsubsection}{\numberline {1.3.1}Vision-Language Pre-trained}{8}{subsubsection.1.3.1}%
 \contentsline {subsubsection}{\numberline {1.3.2}Text-Image Tasks}{8}{subsubsection.1.3.2}%
-\contentsline {section}{\numberline {2}Lecture 2. Metric Space}{9}{section.2}%
-\contentsline {subsection}{\numberline {2.1}The Role of Metric Space in VDA}{9}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}The Basic Concepts in Metric Space}{9}{subsection.2.2}%
+\contentsline {section}{\numberline {2}Lecture 2. Metric Space}{10}{section.2}%
+\contentsline {subsection}{\numberline {2.1}The Role of Metric Space in VDA}{10}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}The Basic Concepts in Metric Space}{10}{subsection.2.2}%
 \contentsline {subsubsection}{\numberline {2.2.1}Metric Space}{10}{subsubsection.2.2.1}%
 \contentsline {subsubsection}{\numberline {2.2.2}Cauchy sequences}{10}{subsubsection.2.2.2}%
 \contentsline {subsubsection}{\numberline {2.2.3}Convergent sequence}{10}{subsubsection.2.2.3}%
