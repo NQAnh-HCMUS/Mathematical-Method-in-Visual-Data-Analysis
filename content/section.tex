@@ -599,10 +599,8 @@ HOHUI Quốc Ngpo 12023
 
 
 \pagebreak
-\subsection{Lecture 3. Apply 
-metric space to VDA}
 \subsubsection {Drawing based on Fractal geometry}
-\textbf{3.1.1}. Computing Fractals from Iterated Function Systems
+\textbf{Computing Fractals from Iterated Function Systems}
 
 Consider IFS \{ $\mathbb{R}^2$, $w_n$: $n = 1, 2, \ldots, N$ \}
 
@@ -654,16 +652,8 @@ Compute directly a sequence of sets $A_n = W^{on}(B)$, starting from an initial 
 
 Sequence $\{A_n\}$ converges to the attractor $A$ of the IFS in the Hausdorff metric.
 
-\begin{table}[H]
-    \centering
-    \begin{tabular}{|l|}
-    \hline
-    \textbf{Q: Nguyên lí vẽ hình Fractal?}  \\ \hline
-    A: Định lí ánh xạ co và hệ hàm lặp IFS  \\ \hline
-    \end{tabular}
-    % \caption{}
-    % \label{tab:my_label_with_H_tag}
-\end{table}.
+\textbf{Q: Nguyên lí vẽ hình Fractal?}\\
+A: Định lí ánh xạ co và hệ hàm lặp IFS 
 
 \pagebreak
 \textbf{Deterministic Algorithm}
@@ -708,45 +698,32 @@ A:
 
 Let $\{X; w_1, w_2, \ldots, w_N\}$ be an IFS, where $p_i > 0$ has been $1, 2, \ldots, N$ assigned to $w_i > 0$, $\sum p_i = 1$
 
-Choose $x_0+- \in X$ and then choose recursively, independently,
-
-$x_n \in \{ w_1(x_{n-1}), w_2(x_{n-1}), \ldots, w_N(x_{n-1}) \}$, $n = 1, 2, 3, \ldots$
-
+Choose $x_0 \in X$ and then choose recursively, independently,
+\begin{equation*}
+    x_n \in \{ w_1(x_{n-1}), w_2(x_{n-1}), \ldots, w_N(x_{n-1}) \}, n = 1, 2, 3, \ldots
+\end{equation*}
 Where the probability of the event $x_n = w_i(x_{n-1})$ is $p_i$
 
 Sequence $\{x_n\}$ be constructed converges to the attractor of the IFS.
+\begin{enumerate}
+    \item Initialize $s[M,M]$, $t[M,M]$
+    \item Setup the values of IFS
+    \begin{itemize}
+        \item $a[1]=0.5; b[1]=0; c[1]=0; d[1]=0.5; e[1]=1; f[1]=1$
+        \item $a[2]=0.5; b[2]=0; c[2]=0; d[2]=0.5; e[2]=50; f[2]=1$
+        \item $a[3]=0.5; b[3]=0; c[3]=0; d[3]=0.5; e[3]=50; f[3]=50$
+    \end{itemize}
+    \item $x=0; y=0; numits=N$ /Initialize $(x,y)$ and the number of iterations/
+    \item For $n=1$ to $numits$ \quad /Random Iteration/
+    \item \quad $k=\text{int}(3*\text{rnd}-0.0001)+1$ /Choose one of the numbers 1,2,3/
+    \item \quad $newx=a[k]*x+b[k]*y+e[k];$
+    \item \quad $newy=c[k]*x+d[k]*y+f[k];$
+    \item \quad $x=newx; y=newy$
+    \item \quad setpixel($x,y$)
+    \item End /for $n$
+\end{enumerate}
 
-1. Initialize $s[M,M]$, $t[M,M]$
-
-2. Setup the values of IFS
-
-$a[1]=0.5; b[1]=0; c[1]=0; d[1]=0.5; e[1]=1; f[1]=1$
-
-$a[2]=0.5; b[2]=0; c[2]=0; d[2]=0.5; e[2]=50; f[2]=1$
-
-$a[3]=0.5; b[3]=0; c[3]=0; d[3]=0.5; e[3]=50; f[3]=50$
-
-3. $x=0; y=0; numits=N$ /Initialize $(x,y)$ and the number of iterations/
-
-4. For $n=1$ to $numits$ /Random Iteration/
-
-5. $k=\text{int}(3*\text{rnd}-0.0001)+1$ /Choose one of the numbers 1,2,3/
-
-6. $newx=a[k]*x+b[k]*y+e[k];$
-
-7. $newy=c[k]*x+d[k]*y+f[k];$
-
-8. $x= newx;$
-
-9. $y=newy;$
-
-10. setpixel($x,y$);
-
-11. End /for $n$/
-
-
-\subsection {Fractal image compression}
-
+\subsubsection {Fractal image compression}
 \textbf{Method}
 
 Based on theorem of contraction mapping sequence in metric space Hausdorff
