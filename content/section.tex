@@ -1136,6 +1136,8 @@ T \cdot e = e'
 \[
 S \cdot f = f'
 \]
+\textbf{Q: Chứng minh}
+A: 
 
 If $\varphi$ is the bilinear form on $E \times E$ then:
 \[
@@ -1155,7 +1157,7 @@ with
 \end{align*}
 
 
-\subsubsection{Definition (Quadratic forms)}
+\subsubsection{Definition (Quadratic forms - Dạng toàn phương)}
 
 Given vector space $E$ over the field $T$.
 
@@ -1182,6 +1184,7 @@ w(x) = \varphi(x, x) = \varphi\left(\sum_{i=1}^n x_i e_i, \sum_{j=1}^n x_j e_j\r
 \[
 w(x) = (x) A (x^T)
 \]
+
 
 where $A = [\varphi(e_i, e_j)]$.
 
@@ -1214,6 +1217,108 @@ If in $E$, $T$ is the transition matrix from the old basis to the new basis, the
 
 where $A' = T A T^T$.
 
+\textbf{Q: Dạng toàn phương đã gặp ở đâu trong các bài toán thị giác?}\\
+A: 
+
+\textbf{Q: Giả sử có dạng toàn phương w(x) trên không gian tuyến tính n  chiều K trên T.\\
+CM: tồn tại cơ sở $f_1, f_2, \ldots, f_n$ sao cho}
+\begin{equation*}
+    x = \sum_{i=1}^n u_i f_i
+\end{equation*}
+\textbf{thì $w(x) = k_1 u_1^2 + k_2 u_2^2 + \ldots + k_n u_n^2$}\\
+A: Giả sử $e_1, e_2, \ldots, e_n$ là cơ sở của K.
+
+Nếu $x = \sum_{i=1}^n x_i e_i$ thì $w(x) = \sum_{i=1}^n \sum_{j=1}^n a_{ij}x_ix_j$.
+
+B1: Giả sử ít nhấnt 1 trong các hệ số của bình phương các ẩn khác 0. ($a_{n} \neq 0$)
+
+B2: \begin{equation*}
+    w(x) = a_{11}\left(x_1^2 + 2\frac{a_{12}}{a_{11}}x_1x_2 + \ldots + 2\frac{a_{1n}}{a_{11}}x_1x_n \right) + g(x_2, \ldots, x_n) \textrm(nhóm các số không chứa )x_1
+\end{equation*}
+
+B3: Bộ số cho biểu thức trong 
+\begin{equation*}
+    w(x) = a_{11}\left[x_1^2 + 2x_1 \left( \frac{a_{12}}{a_{11}}x_2 + \ldots + \frac{a_{1n}}{a_{11}}x_n \right)+ \frac{(a_{12}x_2 + \ldots + a_{1n}x_n)^2}{a_{11}^2} - \frac{(a_{12}x_2 + \ldots + a_{1n}x_n)^2}{a_{11}^2} \right] + g(x_2, \ldots, x_n)
+\end{equation*}
+
+B4: 
+\begin{align*}
+    w(x) &= a_{11}\left(x_1 + \frac{a_{12}x_2 + \ldots + a_{1n}x_n}{a_{11}}\right)^2 - \frac{(a_{12}x_2 + \ldots + a_{1n}x_n)^2}{a_{11}^2} + g(x_2, \ldots, x_n)\\
+    &= a_{11}\left(x_1 + \frac{a_{12}x_2 + \ldots + a_{1n}x_n}{a_{11}}\right)^2 + f_1(x_2, \ldots, x_n)
+\end{align*}
+
+B5: 
+\begin{equation*}
+    f_1 = \sum_{i=2}^n \sum_{j=2}^n a'_{ij}x_ix_j
+\end{equation*}
+
+B6:
+\begin{equation*}
+    w(x) = a_{11}\left(x_1 + \frac{a_{12}x_2 + \ldots + a_{1n}x_n}{a_{11}}\right)^2 + \sum_{i=2}^n \sum_{j=2}^n a'_{ij}x_ix_j
+\end{equation*}
+
+B7: Đặt biến:
+\begin{align*}
+    &\begin{cases}
+        y_1 = x_1 + \frac{a_{12}x_2}{a_{11}} + \ldots + \frac{a_{1n}x_n}{a_{11}}\\
+        y_2 = x_2\\
+        \vdots\\
+        y_n = x_n
+    \end{cases}
+    \Rightarrow
+    \begin{cases}
+        x_1 = y_1 - \frac{a_{12}y_2}{a_{11}} - \ldots - \frac{a_{1n}y_n}{a_{11}}\\
+        x_2 = y_2\\
+        \vdots\\
+        x_n = y_n
+    \end{cases}\\
+    &w(x) = a_{11}y_1^2 + \sum_{i=2}^n \sum_{j=2}^n a'_{ij}y_iy_j
+\end{align*}
+
+B8: Tiếp tục sau n số hàm hữu hạn 
+\begin{equation*}
+    w(x) = \sum_{i=1}^n k_iu_i^2
+\end{equation*}
+
+\textbf{Q: Trong không gian 3 chiều có hệ cơ số $e_1, e_2, e_3$\\
+ và dạng toàn phương $w(x) = x_1^2 - 2x_1x_2 + x_2^2 + 4x_1x_3 + 4x_3^2 + 2x_2x_3$.\\
+ Dùng phương pháp Lagrange, đưa w(x) về dạng chính tắc.}\\
+A:\begin{align*}
+    w(x) &= x_1^2 - 2x_1x_2 + x_2^2 + 4x_1x_3 + 4x_3^2 + 2x_2x_3\\
+    &= (x_1^2 - 2x_1x_2 + 4x_1x_3) + (x_2^2 + 2x_2x_3 + 4x_3^2)\\
+    &= [x_1^2 - 2x_1(x_2 - 2x_3)] + (x_2^2 + 2x_2x_3 + 4x_3^2)\\
+    &= [x_1^2 - 2x_1(x_2 - 2x_3) + (x_2 - 2x_3)^2 - (x_2 - 2x_3)^2] + (x_2^2 + 2x_2x_3 + 4x_3^2)\\
+    &= (x_1 - x_2 + 2x_3)^2 - (x_2 - 2x_3)^2 + x_2^2 + 2x_2x_3 + 4x_3^2\\ 
+    &= (x_1 - x_2 + 2x_3)^2 - 6x_2x_3
+\end{align*}
+Đặt biến:
+\begin{equation*}
+    \begin{cases}
+        y_1 = x_1 - x_2 + 2x_3\\
+        y_2 = x_2\\
+        y_3 = x_3
+    \end{cases}
+    \Rightarrow
+    \begin{cases}
+        x_1 = -y_1 - y_2 + 2y_3\\
+        x_2 = y_2\\
+        x_3 = y_3
+    \end{cases}
+    \Rightarrow
+    w(x) = y_1^2 - 6y_2y_3
+\end{equation*}
+Đặt
+\begin{align*}
+    \begin{cases}
+        y_1 = z_1\\
+        y_2 = z_2+z_3\\
+        y_3 = z_2-z_3
+    \end{cases}
+    \Rightarrow
+        w(z) &= z_1^2 - 6(z_2^2 - z_3^2)\\
+        &= z_1^2 - 6z_2^2 + 6z_3^2
+\end{align*}
+
 \subsubsection{Transform the quadratic form to the canonical form}
 Consider the quadratic form on an $n$-dimensional vector space $E$ over the field $T$.
 
@@ -1240,6 +1345,7 @@ where $k_1, k_2, \ldots, k_n$ are elements of the field $T$.
     w(x) &= a_{11}y_1^2 + \sum^n_{i=2} \sum^n_{j=2} a'_{ij}y_iy_j
 \end{align*}
 
+\pagebreak
 \textbf{Q: $w(x) = x_1^2 - 2x_1x_2 + x_2^2+4x_1x_3 + 4x_3^2 + 2x_2x_3$}\\
 A: \begin{align*}
     w(x) &= x_1^2 - 2x_1x_2 + x_2^2 - 4x_1x_3 + 4x_3^2 + 2x_2x_3\\
@@ -1311,7 +1417,7 @@ $A$ is symmetric $\rightarrow |A - \lambda I| = 0$ has a real root $\rightarrow$
     \item $A$ is symmetric $\rightarrow$ Find out the orthogonal matrix $T$ such that $TAT^{-1}$ is diagonal, diagonal elements are the characteristic root of $A$, each root taken a number of times equal to its multiplicity.
 \end{itemize}
 
-\subsubsection{Reduce the quadratic form to the canonical form}
+\subsubsection{Reduce the quadratic form to the canonical form (Chuyển dạng toàn phương về dạng chuẩn)}
 \textbf{Theorem}:
 
 In the $n$-dimensional Euclidean space $E$, every quadratic form can be reduced to a unique canonical form 
@@ -1342,29 +1448,107 @@ In this basis:
     &= \sum_{i=1}^n \lambda_i u_i v_i\\
     w(x) &= \varphi(x, x) = \sum_{i=1}^n \lambda_i u_i^2\\
 \end{align*}
-\textbf{Q: $w(x) = 2x_2x_3 + 2x_3x_1 + 2x_1x_2$}\\
-A: \begin{align*}
-    w(x) &= 2x_2x_3 + 2x_3x_1 + 2x_1x_2\\
-    &= \begin{pmatrix}
-        x_1 & x_2 & x_3
-    \end{pmatrix}
-    \begin{pmatrix}
-        0 & 1 & 1\\
-        1 & 0 & 0\\
-        1 & 1 & 0
-    \end{pmatrix}
-    \begin{pmatrix}
-        x_1\\
-        x_2\\
-        x_3
-    \end{pmatrix}\\
-    & |A - \lambda I| = \begin{vmatrix}
-        -\lambda & 1 & 1\\
-        1 & -\lambda & 0\\
-        1 & 1 & -\lambda
-    \end{vmatrix} = (1+\lambda)^2(2 - \lambda) \\
-    &w(x) = 2u_1^2 - u_2^2 - u_3^2 = (u_1u_2u_3)T
-\end{align*}
+
+\textbf{Q: Chuyển về dạng chính tắc $w(x) = 2x_2x_3 + 2x_3x_1 + 2x_1x_2$}
+\begin{enumerate}
+    \item \textbf{Biểu diễn dạng ma trận}
+    \item \textbf{Nhận xét ma trận A}
+    \item \textbf{Tính giá trị riêng của} $A - \lambda I = 0$
+    \item \textbf{Dạng chính tắc của} $w(x) = \lambda_1u_1^2 + \lambda_2u_2^2 + \lambda_3u_3^2$
+    \item \textbf{Tìm phép biến đổi $x_1, x_2, x_3$ qua $u_1, u_2, u_3$}
+\end{enumerate}
+A: \begin{enumerate}
+    \item \begin{equation*}
+        w(x) = 2x_2x_3 + 2x_3x_1 + 2x_1x_2
+        = \begin{pmatrix}
+            x_1 & x_2 & x_3
+        \end{pmatrix}
+        \begin{pmatrix}
+            0 & 1 & 1\\
+            1 & 0 & 1\\
+            1 & 1 & 0
+        \end{pmatrix}
+        \begin{pmatrix}
+            x_1\\
+            x_2\\
+            x_3
+        \end{pmatrix}
+    \end{equation*}
+    \item sdfsdfsdfsf
+    \item \begin{align*}
+        |A - \lambda I| &= \begin{vmatrix}
+            -\lambda & 1 & 1\\
+            1 & -\lambda & 1\\
+            1 & 1 & -\lambda
+        \end{vmatrix} = (1+\lambda)^2(2 - \lambda) = 0 \Rightarrow \begin{cases}
+            \lambda_1 = -1\\
+            \lambda_2 = 2
+        \end{cases}\\
+        \textrm{Với } \lambda_1 = -1 &\Rightarrow \begin{pmatrix}
+            x_1 & x_2 & x_3
+        \end{pmatrix}
+        \begin{pmatrix}
+            1 & 1 & 1\\
+            1 & 1 & 1\\
+            1 & 1 & 1
+        \end{pmatrix} = 0 \Rightarrow x_1 + x_2 + x_3 = 0 \Rightarrow
+        \begin{cases}
+            x_1 = -a-b\\
+            x_2 = a\\
+            x_3 = b
+        \end{cases}\\
+        &\Rightarrow \textrm{Vector riêng } x = (x_1, x_2, x_3) = (-a-b, a, b) = a(-1, 1, 0) \textrm{ và } b(-1, 0, 1)\\
+        \textrm{Với } \lambda_2 = 2 &\Rightarrow \begin{pmatrix}
+            x_1 & x_2 & x_3
+        \end{pmatrix}
+        \begin{pmatrix}
+            -2 & 1 & 1\\
+            1 & -2 & 1\\
+            1 & 1 & -2
+        \end{pmatrix} = 0 \Rightarrow \begin{cases}
+            -2x_1 + x_2 + x_3 = 0\\
+            x_1 - 2x_2 + x_3 = 0\\
+            x_1 + x_2 - 2x_3 = 0
+        \end{cases}\Rightarrow x_1 = x_2 = x_3 = k\\
+        &\Rightarrow \textrm{Vector riêng } x = (x_1, x_2, x_3) = (k, k, k) = k(1,1,1)\\
+    \end{align*}
+    Tóm lại:
+    \begin{align*}
+        f'_1 = (1, 1, 1) &\Rightarrow f_1 = \left(\frac{1}{\sqrt{3}},\frac{1}{\sqrt{3}},\frac{1}{\sqrt{3}}\right)\\
+        \begin{cases}
+            e_2 &= (-1, 1, 0)\\
+            e_3 &= (-1, 0, 1)    
+        \end{cases} &\Rightarrow \begin{cases}
+            f'_2 &= e_2 = (-1, 1, 0)\\
+            f'_3 &= -\frac{1}{2}e_2+ e_3 = \left(-\frac{1}{\sqrt{2}}, -\frac{1}{\sqrt{2}}, 1\right)
+        \end{cases}\\
+        &\Rightarrow \begin{cases}
+            f'_2 &= \left( -\frac{1}{\sqrt{2}}, -\frac{1}{\sqrt{2}}, 0 \right)\\
+            f'_3 &= \left( -\frac{1}{\sqrt{6}}, -\frac{1}{\sqrt{6}}, \frac{2}{\sqrt{6}} \right)
+        \end{cases}\\
+        Te=f \Rightarrow \begin{matrix}
+            (1,0,0) \left(\frac{1}{\sqrt{3}},\frac{1}{\sqrt{3}},\frac{1}{\sqrt{3}}\right)\\
+            (0,1,0) \left( -\frac{1}{\sqrt{3}}, \frac{1}{\sqrt{2}}, 0 \right)\\
+            (0,0,1) \left( -\frac{1}{\sqrt{6}}, -\frac{1}{\sqrt{6}}, \frac{2}{\sqrt{6}} \right) 
+        \end{matrix}&\Rightarrow T = \begin{pmatrix}
+            \frac{1}{\sqrt{3}} & \frac{1}{\sqrt{3}} & \frac{1}{\sqrt{3}}\\
+            -\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} & 0\\
+            -\frac{1}{\sqrt{6}} & -\frac{1}{\sqrt{6}} & \frac{2}{\sqrt{6}}\\
+        \end{pmatrix}\\
+    \end{align*}
+    \begin{align*}
+        \Rightarrow (x) &= (x')T\\
+        (x_1, x_2, x_3) &= (u_1, u_2, u_3)T\\
+        \Rightarrow w(x) &= 2u_1^2 - u_2^2 - 3u_3^2
+    \end{align*}
+    \item \begin{align*}
+        w(x) &= \lambda_1u_1^2 + \lambda_2u_2^2 + \lambda_3u_3^2\\
+    \end{align*}
+\end{enumerate}
+$w(x) = 2u_1^2 - u_2^2 - u_3^2 = (u_1u_2u_3)T$
+
+
+
 
 \subsection{Applications}
 
@@ -1372,9 +1556,56 @@ A: \begin{align*}
 \section{Chapter 4. Optimization Method}
 \subsection{The role of optimization method in VDA}
 \subsection{Unconstrained optimization method}
+
+
+
 \subsection{Constrained optimization method}
+
+
+Cực tiểu hàm mục tiêu phi tuyến với ràng buộc đẳng thức phi thuyến
+\begin{equation*}
+    \underset{x}{min} f(x) , \quad g(x) = 0
+\end{equation*}
+\begin{equation*}
+    f: \mathbb{R}^n \rightarrow \mathbb{R}, \quad g: \mathbb{R}^n \rightarrow \mathbb{R}^m, \quad m < n
+\end{equation*}
+Để $x$ là lời giải của bài toán, cần thoả
+\begin{equation*}
+    -\nabla f(x) = J^T_g (x) \lambda
+\end{equation*}
+$J^T_g$ là ma trận của 
+
+$\lambda$
+
+Xét hàm Lagrange $L: R^{n\rightarrow m}\rightarrow R$
+
+
+\textbf{Q:1asdasd }\\
+A: \begin{align*}
+    L (x, \lambda) &= f(x) + \lambda^Tg(x) = 0.5x_1^2 + 2.5x_2^2 + \lambda(x_1-x_2-1)\\
+    \nabla L (x, \lambda) &= \begin{bmatrix}
+        x_1 + \lambda\\
+        5x_2 - \lambda\\
+        x_1 - x_2 - 1
+    \end{bmatrix}\Rightarrow \begin{cases}
+        x_1 + \lambda = 0\\
+        5x_2 - \lambda = 0\\
+        x_1 - x_2 - 1 = 0
+    \end{cases} \Rightarrow \begin{cases}
+        x_1 = \frac{5}{6}\\
+        x_2 = -\frac{1}{6}\\
+        \lambda = -\frac{5}{6}
+    \end{cases}\\
+    \nabla^2 L (x, \lambda) &= \begin{pmatrix}
+        \lambda & 0 & 1\\
+        0 & -\lambda & -1\\
+        1 & -1 & 0
+    \end{pmatrix}\\
+\end{align*}
+
 \subsection{Applications of optimization method in VDA}
 
+\newpage
 \section{Chapter 5. Method of Solving a System of Equations}
 \subsection{The role of system of equations in VDA}
 \subsection{Method of solving system of linear equations}
