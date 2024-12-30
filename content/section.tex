@@ -191,7 +191,6 @@ They build - \textbf{"A generative Markov chain which converts a simple known di
     \centering
     \includegraphics[scale=.2]{img/ForwardNBackwardORReverse Diffusion process.jpg}
     \caption{Illustration of Forward and Backward/Reverse Diffusion process}
-    \label{fig:my_label_with_H}
 \end{figure}
 
 \textbf{In 2015}, Sohl-Dickstein et al. published paper "Deep Unsupervised Learning using Nonequilibrium Thermodynamics" and Diffusion models in deep learning were first introduced.
@@ -522,11 +521,6 @@ A: Cho không gian toạ độ ảnh, ta có: d(x,y): khoảng cách giữa 2 đ
     &\textrm{Bất đẳng thức Bunjakowski-Schwarz}\\
 \end{align*}
 
-
-
-
-
-
 \textbf{Q: Cho ví dụ về dãy Cauchy mà không phải dãy hội tụ}\\
 A: 
 
@@ -748,10 +742,6 @@ A:
 \textbf{Q: Nguyên lí nén ảnh Fractal?}\\
 A: 
 
-
-không gian metric hiểu các yếu tố cơ bản
-, định lí ánh xạ co \& ứng dụng trong tạo hình \& nén ảnh Fractal, 
-không gian vector
 
 \textbf{Q: Trình bày lí thuyết nền tảng tạo hình Fractal?}\\
 A: 
@@ -1602,6 +1592,526 @@ A: \begin{align*}
         1 & -1 & 0
     \end{pmatrix}\\
 \end{align*}
+
+
+
+Tôi ưu Lagrange
+
+
+
+
+
+
+
+
+
+
+
+\section{Optimization Method}
+\subsection{Unconstrained Optimization}
+\subsubsection{Problem Statement}
+
+Given a function $f:R^n\rightarrow R$ and a set $S \subset R^n$, we seek \( x \in S \) such that \( f \) attains a minimum on \( S \) at \( x \), i.e., 
+\begin{equation*}
+    f(x) \leq f(y) \quad \forall y \in S
+\end{equation*}
+The objective function \( f \) may be linear or nonlinear.
+
+The constrained set $S$ is usually defined by a system of equations or inequalities, or both, that may be linear or nonlinear.
+
+If $S = R^n$ then the problem is unconstrained.
+
+General continuous optimization problems have the form
+\begin{equation*}
+    \underset{x}{\text{$\min$}} f(x) \quad \text{subject to} \quad g(x) = 0, h(x) \leq 0
+\end{equation*}
+\begin{equation*}
+    f: R^n \rightarrow R, \quad g: R^n \rightarrow R^m, \quad h: R^n \rightarrow R^k
+\end{equation*}
+\subsubsection{Tối ưu cục bộ, tối ưu toàn cục}
+Hàm $f$ có cực tiểu toàn cục tại $x^*$ nếu 
+\begin{equation*}
+    f(x^*) \leq f(x), \quad \forall x \in S
+\end{equation*}
+Hàm $f$ có cực tiểu cục bộ tại $x^*$ nếu 
+\begin{equation*}
+    f(x^*) \leq f(x),\quad || x - x^* || < \epsilon
+\end{equation*}
+\subsubsection{Tối ưu không ràng buộc}
+Điều kiện cần để $x*$ là điểm cực trị của $f:R^n\rightarrow R$ là
+\begin{equation*}
+    \nabla f(x^*) = 0
+\end{equation*}
+Điều kiện đủ để $x*$ là điểm cực tiểu, cực đại, yên ngựa là
+
+Nếu $H_f(x)$ xác định dương ($x^TH_f(x) > 0$) thì $x*$ là điểm cực tiểu.
+
+Nếu $H_f(x)$ xác định âm ($x^TH_f(x) < 0$) thì $x*$ là điểm cực đại. 
+
+Nếu $H_f(x)$ không xác định thì $x*$ là điểm yên ngựa. 
+\begin{equation*}
+    \{H_f(x)\}_y = \frac{\partial^2 f(x)}{\partial x_i \partial x_j}
+\end{equation*}
+VD: $f(x+h) = f(x) + f'(x)h + \frac{f"(x)}{2} h^2 + O(h^3)$
+\begin{align*}
+    &f: R \rightarrow R\\
+    &\begin{cases}
+        f(x) = 0\\
+        f"(x) > 0
+    \end{cases} \Rightarrow f(x+h) = f(x) + \frac{f"(x)}{2}h^2 > f(x)
+\end{align*}
+VD: $f(x+h) = f(x) + J(x)h + \frac{1}{2}h^TH(x)h + O(|h^3|)$
+\begin{align*}
+    &f: R^n \rightarrow R\\
+    &\begin{cases}
+        J(x) = 0\\
+        h^TH(x)h > 0
+    \end{cases} \Rightarrow f(x+h) = f(x) + \frac{1}{2}h^TH(x)h > f(x)
+\end{align*}
+VD: \begin{equation*}
+    J(x) = \begin{bmatrix}
+        \frac{\partial f}{\partial x_1} \frac{\partial f}{\partial x_1} \ldots \frac{\partial f}{\partial x_n}
+    \end{bmatrix}
+\end{equation*}
+\begin{equation*}
+    H(x) = \begin{bmatrix}
+        \frac{\partial^2 f}{\partial x_1^2} \frac{\partial f}{\partial x_1\partial x_2} \ldots \frac{\partial f}{\partial x_1\partial x_n}\\
+        \frac{\partial f}{\partial x_2\partial x_1} \frac{\partial^2 f}{\partial x_2^2}\ldots \frac{\partial f}{\partial x_2\partial x_n}\\
+        \vdots\\
+        \frac{\partial f}{\partial x_n\partial x_1} \frac{\partial f}{\partial x_n\partial x_2} \ldots \frac{\partial^2 f}{\partial x_n^2}
+    \end{bmatrix}
+\end{equation*}
+
+\subsubsection{Tối ưu có ràng buộc}
+Cực tiểu hàm mục tiêu phi tuyến với ràng buộc đẳng thức phi tuyến
+\begin{equation*}
+    \underset{x}{min} f(x) , \quad g(x) = 0
+\end{equation*}
+\begin{equation*}
+    f: {R}^n \rightarrow {R}, \quad g: {R}^n \rightarrow {R}^m, \quad m \leq     n
+\end{equation*}
+Để $x$ là lời giải của bài toán, cần thỏa
+\begin{equation*}
+    -\nabla f(x) = J^T_g(x)\lambda
+\end{equation*}
+$J^T_g$ là ma trận Jacobi của $g$
+$\lambda$ là vectơ nhân tử Lagrange m chiều
+
+Xét hàm Lagrange $L: R^{n+m}\rightarrow R$,
+
+% *L* ( *x* ,λ) = *f* ( *x* ) +λ*g* ( *x* )
+
+% ∇*L* ( *x* ,λ) =
+
+% 
+
+% 
+
+% ∇
+
+% ∇λ
+
+% *x L*
+
+% *L*
+
+% (
+
+% (
+
+% *x*
+
+% *x*
+
+% ,
+
+% ,
+
+% λ
+
+% λ
+
+% )
+
+% )
+
+% 
+
+% 
+
+% =
+
+% 
+
+% 
+
+% 
+
+% ∇*f* ( *x*
+
+% *g*
+
+% )
+
+% (
+
+% +
+
+% *x* )
+
+% *J g* *T* ( *x* )λ
+
+% 
+
+% 
+
+% *B* ( *x* ,λ ) *J g T* ( *x* )
+
+% *H L* ( *x* ,λ) =  
+
+% *J g* ( *x* ) *O*
+
+% *m*
+
+% *B* ( *x* ,λ) = ∇*xx L* ( *x* ,λ) =  *H* *f* ( *x* ) + ∑λ*i H ig* ( *x* )
+
+*i* = 1
+
+PGS.TS. Lý Quốc Ngọc 12
+
+**fit@hcmus** **4.0** **6.2**. Tối ưu có ràng buộc
+
+**Tối ưu có ràng buộc**
+
+Điểm cực trị của bài toán thỏa
+
+% ∇*L* ( *x* ,λ) =
+
+% 
+
+% 
+
+% ∇
+
+% ∇λ
+
+% *x L*
+
+% *L*
+
+% (
+
+% (
+
+% *x*
+
+% *x*
+
+% ,
+
+% ,
+
+% λ
+
+% λ
+
+% )
+
+% )
+
+% 
+
+% 
+
+% =
+
+% 
+
+% 
+
+% 
+
+% ∇*f* ( *x*
+
+% *g*
+
+% )
+
+% (
+
+% +
+
+% *x* )
+
+% *J g* *T* ( *x* )λ
+
+% 
+
+% 
+
+% =  0
+
+Điều kiện đủ để đạt cực tiểu tại là xác định dương.
+
+PGS.TS. Lý Quốc Ngọc 13
+
+**fit@hcmus** **4.0** **6.2**. Tối ưu có ràng buộc
+
+**Tối ưu có ràng buộc**
+
+Vd: cực tiểu hàm dạng toàn phương
+
+*f* ( *x* ) =  5.0 *x* 1 2 +  5.2 *x* 2 2
+
+Với ràng buộc
+
+% *g* ( *x* ) = *x* 1−*x* 2−1 =  0
+
+Hàm Lagrange được xác định bởi
+
+% *L* ( *x* ,λ) =  *f* ( *x* ) +λ*g* ( *x* ) =  5.0 *x* 1 2 +  5.2 *x* 2 2 +λ( *x* 1 − *x* 2 −)1
+
+PGS.TS. Lý Quốc Ngọc 14
+
+**fit@hcmus** **4.0** **6.2**. Tối ưu có ràng buộc
+
+**Tối ưu có ràng buộc**
+
+% ∇*f* ( *x* ) =
+
+% 
+
+% 5
+
+% *x* 1
+
+% *x* 2
+
+% 
+
+%  *và* *J g* ( *x* ) = 1[ −]1
+
+% ∇*x L* ( *x* ,λ) = ∇*f* ( *x* ) +  *J g* *T* ( *x* )λ= 
+
+% 5
+
+% *x* 1
+
+% *x* 2
+
+% 
+
+% 
+
+% +λ
+
+% 
+
+% −
+
+% 1
+
+% 1
+
+% 
+
+% 
+
+PGS.TS. Lý Quốc Ngọc 15
+
+**fit@hcmus** **4.0** **6.2**. Tối ưu có ràng buộc
+
+**Tối ưu có ràng buộc**
+
+Điểm cực trị là nghiệm của hệ phương trình
+
+% *x* 1 +λ= ,0
+
+% 5 *x* 2−λ=  ,0
+
+% *x* 1 − *x* 2 = ,1
+
+Dưới dạng ma trận, ta có
+
+% 1 0 1*x* 1 0
+
+% 
+
+% 0 5 −1
+
+% 
+
+% 
+
+% *x* 2
+
+% = 
+
+% 0
+
+% 
+
+% 1−1 0λ 1
+
+PGS.TS. Lý Quốc Ngọc 16
+
+!https://prod-files-secure.s3.us-west-2.amazonaws.com/fd135006-67fb-4f7e-a8b4-45e7a8a1d9f0/fd042903-e26d-4570-8fb8-f17341ca8411/image9.png
+
+**fit@hcmus** **4.0** **6.2**. Tối ưu có ràng buộc
+
+**Tối ưu có ràng buộc**
+
+Giải hệ phương trình trên, ta được nghiệm
+
+% *x* 1 = .0 833 , *x* 2 =−.0 167 ,λ= −.0 833
+
+PGS.TS. Lý Quốc Ngọc 17
+
+**fit@hcmus** **4.0** **6.2**. Tối ưu có ràng buộc
+
+**Tối ưu có ràng buộc**
+
+Vd: cực tiểu hàm dạng toàn phương
+
+*f* ( *x* , *y* ) =  *x* 2 +  *y* 2
+
+Với ràng buộc
+
+*g* ( *x* , *y* ) = *x* +  *y* = 10
+
+Hàm Lagrange được xác định bởi
+
+% *L* ( *x* , *y* ,λ) =  *x* 2 +  *y* 2 +λ( *x* +  *y* −10 )
+
+PGS.TS. Lý Quốc Ngọc 18
+
+**fit@hcmus** **4.0** **6.2**. Tối ưu có ràng buộc
+
+**Tối ưu có ràng buộc**
+
+Vd: cực tiểu hàm dạng toàn phương
+
+% Điều kiện cần để đạt cực trị
+
+% ∂*L* = 2 *x* +λ=  0 ⇔ *x* = − λ
+
+% ∂*x* 2
+
+% ∂*L* = 2 *y* +λ=  0 ⇔ *y* = − λ
+
+% ∂*y* 2
+
+% ∂*L* =  *x* +  *y*−10 =  0 ⇒ − λ
+
+% 2. = 10 ⇔λ=−10
+
+% ∂λ 2
+
+% Điểm dừng là (5;5;-10)
+
+PGS.TS. Lý Quốc Ngọc 19
+
+**fit@hcmus** **4.0** **6.2**. Tối ưu có ràng buộc
+
+**Tối ưu có ràng buộc**
+
+% Điều kiện đủ để đạt cực tiểu
+
+% ∂*x*
+
+% 2 *L*
+
+% 2 = ,2
+
+% ∂
+
+% ∂*y*
+
+% 2 *L*
+
+% 2 =  ,2
+
+% ∂
+
+% ∂
+
+% *x*
+
+% 2
+
+% ∂
+
+% *L*
+
+% *y*
+
+% = 0
+
+% ∂2 *L* ∂2 *L*
+
+% [*dx dy*]
+
+% 
+
+% 
+
+% 
+
+% ∂
+
+% ∂
+
+% *x*
+
+% 2
+
+% 2
+
+% *L*
+
+% ∂
+
+% ∂
+
+% *x*
+
+% 2
+
+% ∂
+
+% *L*
+
+% *y*
+
+% 
+
+% 
+
+% 
+
+% 
+
+% *dx*
+
+% *dy*
+
+% 
+
+% =  2 ( *dx* 2 + *dy* 2 )> 0
+
+% 
+
+% ∂*x*∂*y* ∂*y* 2
+
+% 
+
+*f* min =  *f* ( 5,5 ) = 5 2 + 5 2 =  25
+
+PGS.TS. Lý Quốc Ngọc 20
+
+
+
+
 
 \subsection{Applications of optimization method in VDA}
 

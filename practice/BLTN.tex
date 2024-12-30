@@ -1,0 +1,460 @@
+\section{Bài tập lớp nhà (BLTN)}
+\subsection{Phần thuyết trình của các nhóm}
+\begin{itemize}
+    \item Nhóm 7:
+    \begin{itemize}
+        \item Với hệ thống VQA, giả sử, với câu hỏi "màu sắc" thì dữ liệu được chuẩn bị như thế nào? Nếu thay màu bằng thuộc tính khác thì việc phân lớp có còn khả thi không?
+        \begin{enumerate}
+            \item[B1:] Thu thập hình ảnh chứa các phiên bản màu sắc khác nhau của cùng 1 đối tượng.            
+            \item[B2:] Đóng khung vật thể trong hình ảnh.
+            \item[B3:] Gán nhãn màu sắc cho các vật thể trong hình ảnh.
+            \item[B4:] Tạo câu hỏi liên quan đến màu sắc của các vật thể trong hình ảnh. VD: "Màu sắc của quả táo là gì?"
+            \item[B5:] Tạo bộ câu trả lời chính xác cho các câu hỏi dựa trên nhãn màu sắc. VD: "Đỏ", "Xanh", "Vàng", vv.             
+        \end{enumerate}
+        \item Nếu thay màu bằng thuộc tính khác thì việc phân lớp có còn khả thi không phụ thuộc vào tính chất đó. Nếu thuộc tính mới có thể được phân loại một cách rõ ràng và chính xác (VD: cái túi có quai cầm hay không), thì việc phân lớp vẫn khả thi. Tuy nhiên, nếu thuộc tính mới không thể phân loại hoặc không thể phân loại một cách chính xác, thì việc phân lớp sẽ gặp khó khăn.
+    \end{itemize}
+    \item Khi cần tạo mạng học sâu, thì dùng mạng có sẵn hay hiệu chỉnh, và hiệu chỉnh nó như thế nào?\\
+    Sử dụng mạng có sẵn:
+    \begin{enumerate}
+        \item Khi có dữ liệu hạn chế.
+        \item Khi thời gian phát triển ngắn.
+        \item Khi bài toán cần giải tương tự với các bài toán mà các mạng có sẵn đã giải quyết tốt.
+    \end{enumerate}
+    Hiệu chỉnh mạng (Fine-tuning):
+    \begin{enumerate}
+        \item Khi có nhiều dữ liệu huấn luyện.
+        \item Khi cần mô hình tùy chỉnh cho bài toán cụ thể.
+        \item Khi có thời gian và tài nguyên để huấn luyện mô hình.
+    \end{enumerate}
+    Các bước hiệu chỉnh mô hình:
+    \begin{enumerate}
+        \item Chọn mô hình đã được huấn luyện trước trên một tập dữ liệu lớn, như ResNet, VGG, hoặc BERT.
+        \item Chuẩn bị dữ liệu huấn luyện và kiểm tra phù hợp với bài toán cụ thể.
+        \item Thay đổi cấu trúc của mô hình nếu cần thiết(VD: thêm các lớp mới) \& điều chỉnh các tham số huấn luyện (learning rate, batch size, epochs).
+        \item Sử dụng dữ liệu mới để huấn luyện lại mô hình, giữ lại các trọng số từ mô hình gốc nếu cần thiết.
+        \item Đánh giá hiệu suất của mô hình trên tập dữ liệu kiểm tra và điều chỉnh nếu cần.
+    \end{enumerate}
+    \item Sửa AlexNet filter\_size thành 3x3 và nhận xét
+    \begin{itemize}
+        \item Tăng tính chi tiết trong trích xuất đặc trưng, bắt được nhiều chi tiết hơn và các đặc trưng nhỏ hơn trong hình ảnh.
+        \item Tăng số lượng phép tính
+        \item Yêu cầu nhiều tài nguyên tính toán hơn và bộ nhớ lớn hơn.
+    \end{itemize}
+    \item Hiệu chỉnh nào làm hiệu suất của Deep learning tăng?\\
+    Learning rate, chỉnh sửa dữ liệu \& batch normalization
+\end{itemize}
+\subsection{Bài tập lớp nhà}
+\begin{enumerate}
+    \item Tìm điểm cực trị của hàm số $f(x,y) = x^3 + 2y^3 - 3x^2 - 6y$
+    \begin{align*}
+        &\begin{cases}
+            f'x = 3x^2 - 6x = 0\\
+            f'y = 6y^2 - 6 = 0
+        \end{cases}
+        \Rightarrow
+        \begin{cases}
+            x = 0\\
+            y = \pm 1
+        \end{cases}\\
+        \Rightarrow
+        &\Delta = AC - B^2;
+        A = f"_{xx}, C = f_"{yy}, B = f"_{xy}\\
+        \Rightarrow
+        &\begin{cases}
+            P_1 \Rightarrow A < 0 \text{ \& } \Delta > 0 \Rightarrow P_1 \text{ cực đại}\\
+            P_2 \Rightarrow \Delta < 0 \Rightarrow P_2 \text{ không là cực trị}\\        
+            P_3 \Rightarrow \Delta < 0 \Rightarrow P_3 \text{ không là cực trị}\\  
+            P_4 \Rightarrow A > 0 \text{ \& } \Delta > 0 \Rightarrow P_4 \text{Cực đại}\\ 
+        \end{cases}
+    \end{align*}
+    \item $f(x,y) \&= x^2 + 2y^2 \text{ với } x^2 + y^2 = 1$
+    \begin{align*}
+        \Leftrightarrow L(x,y,\lambda) &= f(x,y) + \lambda\gamma(x,y)\\
+    \end{align*}
+    \item \textbf{Những khám phá nào ở cấp độ 1 mà làm thay đổi ngoạn mục cấp độ 2 và 3?}\\
+    Fast Fourier Transform (FFT) và Convolutional Neural Network (CNN).
+    \item \textbf{Có mạng học máy nào mới gần đây không?}\\
+    MLP-Mixer, ConvNeXt, DALL-E 2
+    \item \textbf{Ví dụ về lĩnh vực, chủ đề mà Generative AI có thể hỗ trợ, không có không được}\\
+    Image2Text (e.g. tóm tắt video)
+    \item \textbf{Nếu như đánh context "flamingos standing on water, red sunset, pink-red water reflection" thì máy có generate được hình ảnh khác không?}\\
+    Có, VD như DALL-E 2 của OpenAI. 
+    \item \textbf{Mỗi lần gõ cùng một câu thì nó ra một kết quả khác nhau hay giống nhau?}\\
+    Tuỳ vào model
+    \item \textbf{Nếu Intelligence System chỉ dừng ở mức thông minh mà không phải ở mức thông tuệ thì sẽ dừng ở lĩnh vực nào?}\\
+    Nó sẽ chủ yếu dừng lại ở các lĩnh vực yêu cầu khả năng xử lý thông tin và ra quyết định dựa trên các quy tắc và dữ liệu có sẵn, nhưng không yêu cầu sự hiểu biết sâu sắc hay khả năng suy luận phức tạp VD: Tự động hóa và điều khiển,Xử lý ngôn ngữ tự nhiên, Phân tích dữ liệu, Thị giác máy tính
+    \item \textbf{Ý nghĩa của tính chất này?}\\
+    Self-similarity (đặc tính tự tương tự)
+    \begin{align*}
+        A = W(A)
+        &= \bigcup_{n=1}^N w_n(A)\\
+        &= \bigcup_{n=1}^N w_n(W(A))\\
+        &= \bigcup_{n=1}^N\bigcup_{n=1}^N (w_n w_n(A))\\
+    \end{align*}
+    $\rightarrow$ tính chất tự phân hình (tính chất fractal)
+    \item \textbf{Ý nghĩa của tính chất này?}\\
+    A: cho các xấp xỉ 
+    \begin{align*}
+    h(W^{on}(B), A) &\leq \frac{s^n}{1 - s} h(B, W(B)) \quad \forall B \in \mathcal{H}(X)\\
+    \exists \varepsilon: h(W^{on}(B), A) &\leq \varepsilon \quad \forall B \in \mathcal{H}(X)\\
+    \textrm{Let } C &= h(B, W(B))\\
+    \end{align*}
+    \item \textbf{Ý nghĩa của tính chất này?}\\
+    \textbf{Theorem 8}. (\textit{Approximate \(O\) by fixed set})
+    
+    Let \(O\) be a subset of \(\mathcal{H}(X)\). Let \(\{w_n\}_{n=1}^N\) be an iterated function system with contractivity factor \(s\). Then the transformation \(W: \mathcal{H}(X) \rightarrow \mathcal{H}(X)\) defined by:
+    
+    \[
+    W(B) = \bigcup_{n=1}^N w_n(B) \quad \text{for all } B \in \mathcal{H}(X)
+    \]
+    
+    \(A \in \mathcal{H}(X)\) is a fixed set of \(W\),
+    
+    \[
+    h(O, A) \leq \frac{1}{1 - s} h(O, W(O))
+    \]
+    
+    \textbf{Trả lời}: Khẳng định điều kiện khi nào A gần giống O
+    \item \textbf{Cho ví dụ về không gian metric}\\
+    Cho không gian toạ độ ảnh, ta có: d(x,y): khoảng cách giữa 2 điểm x và y trong không gian Euclid, x = $(x_1, x_2)$ và $y = (y_1, y_2)$ với $x_1, x_2, y_1, y_2 \in \mathbb{N}$
+    
+    \begin{align*}
+        0 < d(x,y) &= \sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2} < \infty, \forall x \neq y, \forall x_1, x_2, y_1, y_2 \in \mathbb{N}\\
+        d(x,y) &= \sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2} = 0 \Leftrightarrow x = y\\
+        d(x,y) &= \sqrt{(y_1 - x_1)^2 + (y_2 - x_2)^2} = \sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2} = d(y,x)\\
+        \text{Let }z &= (z_1, z_2) \in \mathbb{N},\\
+        d(x,y) &= \sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2} \\
+        &\leq d(x,z) + d(z,y) = \sqrt{(x_1 - z_1)^2 + (x_2 - z_2)^2} + \sqrt{(z_1 - y_1)^2 + (z_2 - y_2)^2}\\
+        \Leftrightarrow (y_1 - x_1)^2 + (y_2 - x_2)^2 &\leq (y_1 - z_1)^2 + (y_2 - z_2)^2 + (z_1 - x_1)^2 + (z_2 - x_2)^2 +\\ 
+        &2\sqrt{(x_1 - z_1)^2 + (x_2 - z_2)^2}\sqrt{(z_1 - y_1)^2 + (z_2 - y_2)^2}\\
+        \Leftrightarrow (y_1 - z_1 + z_1 - x_1)^2 &+ (y_2 - z_2 + z_2 - x_2)^2 \\
+        &\leq (y_1 - z_1)^2 + (z_1 - x_1)^2 - 2(y_1 - z_1)(z_1 - x_1) \\
+        &+ (y_2 - z_2)^2 + (z_2 - x_2)^2 + 2(y_2 - z_2)(z_2 - x_2) \\
+        &\leq (y_1 - z_1)^2 + (z_1 - x_1)^2 + (y_2 - z_2)^2 + (z_2 - x_2)^2\\
+        \Leftrightarrow [(y_1 - z_1)(z_1 - x_1) &+ (y_2 - z_2)(z_2 - x_2)] \\
+        &\leq [(y_1 - z_1)^2 +(y_2 - z_2)^2] [(z_1 - x_1)^2 + (z_2 - x_2)^2]\\
+        &\text{Bất đẳng thức Bunjakowski-Schwarz}\\
+    \end{align*}
+    \item \textbf{Cho ví dụ về dãy Cauchy mà không phải dãy hội tụ}\\
+    Không gian của các số hữu tỉ Q
+    \item \textbf{Trong hằng hà sa số các ánh xạ, tại sao ánh xạ co được chú ý nhất?}
+    \begin{itemize}
+        \item \textbf{Tính ổn định và hội tụ}: Định lí ánh xạ co của Banach đảm bảo rằng mọi ánh xạ co trên một không gian metric đầy đủ đều có một điểm cố định duy nhất.        
+        \item \textbf{Ứng dụng rộng rãi}: như giải tích, phương trình vi phân, phương trình tích phân và khoa học máy tính.        
+    \end{itemize}
+    \item \textbf{Giải thích định lí ánh xạ co và ứng dụng của nó}\\
+    Định lí ánh xạ co (định lí Banach) phát biểu rằng trong một không gian metric đầy đủ, mọi ánh xạ co đều có một điểm cố định duy nhất. Cụ thể, nếu $(X, d)$ là một không gian metric đầy đủ và $T: X \to X$ là một ánh xạ co, tức là tồn tại một hằng số $0 \leq k < 1$ sao cho:
+    \[
+    d(T(x), T(y)) \leq k \cdot d(x, y) \quad \forall x, y \in X,
+    \]
+    thì tồn tại duy nhất một điểm $x^* \in X$ sao cho $T(x^*) = x^*$.
+    
+    Ứng dụng:
+    
+    \begin{itemize}
+        \item \textbf{Phân tích số liệu}: thiết kế các thuật toán lặp để tìm nghiệm của các bài toán tối ưu hóa.
+        \item \textbf{Khoa học máy tính}: trong các thuật toán học máy và trí tuệ nhân tạo để đảm bảo sự hội tụ của các thuật toán lặp.
+    \end{itemize}
+    \item \textbf{Nguyên lí vẽ hình Fractal?}\\
+    Định lí ánh xạ co và hệ hàm lặp IFS 
+    \item \textbf{Fractal image compression}\\   
+    Based on theorem of contraction mapping sequence in metric space Hausdorff\\
+    Let the Original image be $O$\\
+    The compression image will be $\{ w_n \}$\\
+    The ideal uncompressed will be $A$\\
+    The real uncompressed be $W^{0n}(B)$
+    \begin{itemize}
+        \item \textbf{Ứng dụng vào ảnh Fractal?}\\
+        Nén và lưu trữ ảnh mà vẫn giữ được chất lượng tốt, phóng to ảnh mà không mất nhiều chi tiết
+        \item \textbf{Ảnh tụ có phụ thuộc vào ảnh ban đầu không?}\\
+        A: Ảnh tụ phụ thuộc vào ảnh ban đầu do các bước trong quá trình nén ảnh fractal đều dựa trên việc tìm kiếm các mẫu tự tương đồng trong chính ảnh gốc để tạo ra bộ mã hóa fractal. Các phép biến đổi toán học được sử dụng để nén và giải nén ảnh đều được tối ưu dựa trên các đặc trưng của ảnh ban đầu.
+        \item \textbf{Nguyên lí nén ảnh Fractal?}\\
+        1. Phân đoạn ảnh (Partitioning): Ảnh ban đầu được chia thành các khối nhỏ.
+        2. Biến đổi affine: Áp dụng các phép biến đổi affine để điều chỉnh kích thước, hình dạng và cường độ của các khối sao cho phù hợp.        
+        3. Ánh xạ và lưu trữ: lưu trữ các tham số của phép biến đổi affine (hệ số co dãn, xoay, dịch chuyển, và thay đổi độ sáng,...) để giảm kích thước dữ liệu cần lưu trữ.
+        4. Giải nén ảnh: sử dụng một ảnh ban đầu và các phép biến đổi đã lưu trữ để tái tạo lại ảnh. Lặp đi lặp lại cho đến khi đạt được ảnh cuối cùng (ảnh tụ).
+        \item \textbf{Trình bày lí thuyết nền tảng tạo hình Fractal?}\\
+        A: 
+    \end{itemize}
+    \item \textbf{Cho ví dụ về không gian vector}\\
+    \textit{Ví dụ 1: Không gian vector $\mathbb{R}^2$}
+    
+    Không gian $\mathbb{R}^2$ bao gồm tất cả các cặp số thực $(x, y)$ với $x, y \in \mathbb{R}$. Các phép toán cộng vector và nhân vô hướng được định nghĩa như sau:
+    
+    \begin{itemize}
+        \item Cộng vector: $(x_1, y_1) + (x_2, y_2) = (x_1 + x_2, y_1 + y_2)$
+        \item Nhân vô hướng: $c \cdot (x, y) = (c \cdot x, c \cdot y)$
+    \end{itemize}
+    
+    \textit{Ví dụ 2: Không gian vector các đa thức bậc không quá $n$}
+    
+    Không gian $P_n$ bao gồm tất cả các đa thức bậc không quá $n$ với hệ số thực. Một đa thức $p(x)$ trong $P_n$ có dạng:
+    
+    \[
+    p(x) = a_0 + a_1 x + a_2 x^2 + \ldots + a_n x^n
+    \]
+    
+    với $a_0, a_1, \ldots, a_n \in \mathbb{R}$. Các phép toán cộng đa thức và nhân vô hướng được định nghĩa như sau:
+    
+    \begin{itemize}
+        \item Cộng đa thức: $(a_0 + a_1 x + \ldots + a_n x^n) + (b_0 + b_1 x + \ldots + b_n x^n) = (a_0 + b_0) + (a_1 + b_1) x + \ldots + (a_n + b_n) x^n$
+        \item Nhân vô hướng: $c \cdot (a_0 + a_1 x + \ldots + a_n x^n) = (c \cdot a_0) + (c \cdot a_1) x + \ldots + (c \cdot a_n) x^n$
+    \end{itemize}
+    \item \textbf{Ứng dụng của phương trình trong khoa học thị giác?}\\
+    "Tìm vị trí định vị" của robot
+    \item \textbf{Q: Chứng minh}\\
+    Suppose that $e, f$ are the bases of $E$ and $F$ respectively, the matrix representing the bilinear form is $A$.\\
+    In the new base $e'$ of $E$, $f'$ of $F$, the matrix representing the bilinear form is $A'$:
+    \begin{equation*}
+        A' = T A S^T
+    \end{equation*}
+    $T, S$ are the transformation matrices from the old basis to the new ones.
+    \[
+    T \cdot e = e' \quad \quad \quad \quad \quad \quad S \cdot f = f'
+    \]
+    \textbf{Trả lời:}\\
+    If $\varphi$ is the bilinear form on $E \times E$ then:
+    \[
+    A' = T A T^T
+    \]
+    
+    $T$ is the transition matrix from the old basis to the new one in $E$.
+    \begin{align*} 
+    \varphi(x, y) &= (x) \quad A \quad (y^T)\\
+    &= (x') T A (y'^T) T \\
+    &= (x') (T A T^T) (y')
+    \end{align*}
+    with
+    \begin{align*}
+       (x) &= (x')T\\
+       x &= (x')e'=x'Te
+    \end{align*}
+    \item \textbf{Dạng toàn phương đã gặp ở đâu trong các bài toán thị giác?}\\
+    Hàm mất mát (Loss Function), Phân tích chính tắc (Principal Component Analysis - PCA), Phân loại tuyến tính (Linear Discriminant Analysis - LDA)
+    \item \textbf{Giả sử có dạng toàn phương w(x) trên không gian tuyến tính n  chiều K trên T.\\
+    CM: tồn tại cơ sở $f_1, f_2, \ldots, f_n$ sao cho}
+    \begin{equation*}
+        x = \sum_{i=1}^n u_i f_i
+    \end{equation*}
+    \textbf{thì $w(x) = k_1 u_1^2 + k_2 u_2^2 + \ldots + k_n u_n^2$}\\
+    Giả sử $e_1, e_2, \ldots, e_n$ là cơ sở của K.
+    
+    Nếu $x = \sum_{i=1}^n x_i e_i$ thì $w(x) = \sum_{i=1}^n \sum_{j=1}^n a_{ij}x_ix_j$.
+    \begin{enumerate}
+        \item[B1:] Giả sử ít nhất 1 trong các hệ số của bình phương các ẩn khác 0. ($a_{n} \neq 0$)
+        \item[B2:] \begin{equation*}
+            w(x) = a_{11}\left(x_1^2 + 2\frac{a_{12}}{a_{11}}x_1x_2 + \ldots + 2\frac{a_{1n}}{a_{11}}x_1x_n \right) + g(x_2, \ldots, x_n) \text{ (nhóm các số không chứa) } x_1
+        \end{equation*}
+        \item[B3:] Bộ số cho biểu thức trong 
+        \begin{equation*}
+            w(x) = a_{11}\left[x_1^2 + 2x_1 \left( \frac{a_{12}}{a_{11}}x_2 + \ldots + \frac{a_{1n}}{a_{11}}x_n \right)+ \frac{(a_{12}x_2 + \ldots + a_{1n}x_n)^2}{a_{11}^2} - \frac{(a_{12}x_2 + \ldots + a_{1n}x_n)^2}{a_{11}^2} \right] + g(x_2, \ldots, x_n)
+        \end{equation*}
+        \item[B4:] \begin{align*}
+            w(x) &= a_{11}\left(x_1 + \frac{a_{12}x_2 + \ldots + a_{1n}x_n}{a_{11}}\right)^2 - \frac{(a_{12}x_2 + \ldots + a_{1n}x_n)^2}{a_{11}^2} + g(x_2, \ldots, x_n)\\
+            &= a_{11}\left(x_1 + \frac{a_{12}x_2 + \ldots + a_{1n}x_n}{a_{11}}\right)^2 + f_1(x_2, \ldots, x_n)
+        \end{align*}
+        \item[B5:] \begin{equation*}
+            f_1 = \sum_{i=2}^n \sum_{j=2}^n a'_{ij}x_ix_j
+        \end{equation*}
+        \item[B6:] \begin{equation*}
+            w(x) = a_{11}\left(x_1 + \frac{a_{12}x_2 + \ldots + a_{1n}x_n}{a_{11}}\right)^2 + \sum_{i=2}^n \sum_{j=2}^n a'_{ij}x_ix_j
+        \end{equation*}
+        \item[B7:] Đặt biến: \begin{align*}
+            &\begin{cases}
+                y_1 = x_1 + \frac{a_{12}x_2}{a_{11}} + \ldots + \frac{a_{1n}x_n}{a_{11}}\\
+                y_2 = x_2\\
+                \vdots\\
+                y_n = x_n
+            \end{cases}
+            \Rightarrow
+            \begin{cases}
+                x_1 = y_1 - \frac{a_{12}y_2}{a_{11}} - \ldots - \frac{a_{1n}y_n}{a_{11}}\\
+                x_2 = y_2\\
+                \vdots\\
+                x_n = y_n
+            \end{cases}\\
+            &w(x) = a_{11}y_1^2 + \sum_{i=2}^n \sum_{j=2}^n a'_{ij}y_iy_j
+        \end{align*}
+        \item[B8:] Tiếp tục sau n số hàm hữu hạn  \begin{equation*}
+            w(x) = \sum_{i=1}^n k_iu_i^2
+        \end{equation*}
+    \end{enumerate}        
+
+    
+    \textbf{Trong không gian 3 chiều có hệ cơ số $e_1, e_2, e_3$\\
+     và dạng toàn phương $w(x) = x_1^2 - 2x_1x_2 + x_2^2 + 4x_1x_3 + 4x_3^2 + 2x_2x_3$.\\
+     Dùng phương pháp Lagrange, đưa w(x) về dạng chính tắc.}\\
+    A:\begin{align*}
+        w(x) &= x_1^2 - 2x_1x_2 + x_2^2 + 4x_1x_3 + 4x_3^2 + 2x_2x_3\\
+        &= (x_1^2 - 2x_1x_2 + 4x_1x_3) + (x_2^2 + 2x_2x_3 + 4x_3^2)\\
+        &= [x_1^2 - 2x_1(x_2 - 2x_3)] + (x_2^2 + 2x_2x_3 + 4x_3^2)\\
+        &= [x_1^2 - 2x_1(x_2 - 2x_3) + (x_2 - 2x_3)^2 - (x_2 - 2x_3)^2] + (x_2^2 + 2x_2x_3 + 4x_3^2)\\
+        &= (x_1 - x_2 + 2x_3)^2 - (x_2 - 2x_3)^2 + x_2^2 + 2x_2x_3 + 4x_3^2\\ 
+        &= (x_1 - x_2 + 2x_3)^2 - 6x_2x_3
+    \end{align*}
+    Đặt biến:
+    \begin{equation*}
+        \begin{cases}
+            y_1 = x_1 - x_2 + 2x_3\\
+            y_2 = x_2\\
+            y_3 = x_3
+        \end{cases}
+        \Rightarrow
+        \begin{cases}
+            x_1 = -y_1 - y_2 + 2y_3\\
+            x_2 = y_2\\
+            x_3 = y_3
+        \end{cases}
+        \Rightarrow
+        w(x) = y_1^2 - 6y_2y_3
+    \end{equation*}
+    Đặt
+    \begin{align*}
+        \begin{cases}
+            y_1 = z_1\\
+            y_2 = z_2+z_3\\
+            y_3 = z_2-z_3
+        \end{cases}
+        \Rightarrow
+            w(z) &= z_1^2 - 6(z_2^2 - z_3^2)\\
+            &= z_1^2 - 6z_2^2 + 6z_3^2
+    \end{align*}
+    \item \textbf{Tính:} $w(x) = x_1^2 - 2x_1x_2 + x_2^2+4x_1x_3 + 4x_3^2 + 2x_2x_3$
+    \begin{align*}
+        w(x) &= x_1^2 - 2x_1x_2 + x_2^2 - 4x_1x_3 + 4x_3^2 + 2x_2x_3\\
+        &= (x_1^2 - 2x_1x_2 - 4x_1x_3) + (x_2^2 + 2x_2x_3 + 4x_3^2)\\
+        &= [x_1^2 - 2x_1(x_2 + 2x_3)] + (x_2^2 + 2x_2x_3 + 4x_3^2)\\
+        &= [x_1^2 - 2x_1(x_2 + 2x_3) + (x_2 + 2x_3)^2 - (x_2 + 2x_3)^2] + (x_2^2 + 2x_2x_3 + 4x_3^2)\\
+        &= (x_1 - x_2 - 2x_3)^2 - (x_2 + 2x_3)^2 + x_2^2 + 2x_2x_3 + 4x_3^2\\
+        &= (x_1 - x_2 - 2x_3)^2 - (x_2 + 2x_3)^2 + x_2^2 + 4x_2x_3 + 4x_3^2 - 2x_2x_3\\
+        &= (x_1 - x_2 - 2x_3)^2 - (x_2 + 2x_3)^2 + (x_2 + 2x_3)^2 - 2x_2x_3\\
+        &= (x_1 - x_2 - 2x_3)^2 - 2x_2x_3\\
+        &= y_1^2 + 6y_2y_3\\
+        &\textrm{Set } y_1 = z_1, y_2 = z_2 + z_3, y_3 = z_2 - z_3\\
+        &= z_1^2 + 6(z_2 + z_3)(z_2 - z_3)\\
+        &= z_1^2 + 6(z_2^2 - z_3^2)
+    \end{align*}
+    \item \textbf{Chuyển về dạng chính tắc $w(x) = 2x_2x_3 + 2x_3x_1 + 2x_1x_2$}
+    \begin{enumerate}
+        \item \textbf{Biểu diễn dạng ma trận}
+        \item \textbf{Nhận xét ma trận A}
+        \item \textbf{Tính giá trị riêng của} $A - \lambda I = 0$
+        \item \textbf{Dạng chính tắc của} $w(x) = \lambda_1u_1^2 + \lambda_2u_2^2 + \lambda_3u_3^2$
+        \item \textbf{Tìm phép biến đổi $x_1, x_2, x_3$ qua $u_1, u_2, u_3$}
+    \end{enumerate}
+    \begin{enumerate}
+        \item \begin{equation*}
+            w(x) = 2x_2x_3 + 2x_3x_1 + 2x_1x_2
+            = \begin{pmatrix}
+                x_1 & x_2 & x_3
+            \end{pmatrix}
+            \begin{pmatrix}
+                0 & 1 & 1\\
+                1 & 0 & 1\\
+                1 & 1 & 0
+            \end{pmatrix}
+            \begin{pmatrix}
+                x_1\\
+                x_2\\
+                x_3
+            \end{pmatrix}
+        \end{equation*}
+        \item Ma trận A
+        \item \begin{align*}
+            |A - \lambda I| &= \begin{vmatrix}
+                -\lambda & 1 & 1\\
+                1 & -\lambda & 1\\
+                1 & 1 & -\lambda
+            \end{vmatrix} = (1+\lambda)^2(2 - \lambda) = 0 \Rightarrow \begin{cases}
+                \lambda_1 = -1\\
+                \lambda_2 = 2
+            \end{cases}\\
+            \textrm{Với } \lambda_1 = -1 &\Rightarrow \begin{pmatrix}
+                x_1 & x_2 & x_3
+            \end{pmatrix}
+            \begin{pmatrix}
+                1 & 1 & 1\\
+                1 & 1 & 1\\
+                1 & 1 & 1
+            \end{pmatrix} = 0 \Rightarrow x_1 + x_2 + x_3 = 0 \Rightarrow
+            \begin{cases}
+                x_1 = -a-b\\
+                x_2 = a\\
+                x_3 = b
+            \end{cases}\\
+            &\Rightarrow \textrm{Vector riêng } x = (x_1, x_2, x_3) = (-a-b, a, b) = a(-1, 1, 0) \textrm{ và } b(-1, 0, 1)\\
+            \textrm{Với } \lambda_2 = 2 &\Rightarrow \begin{pmatrix}
+                x_1 & x_2 & x_3
+            \end{pmatrix}
+            \begin{pmatrix}
+                -2 & 1 & 1\\
+                1 & -2 & 1\\
+                1 & 1 & -2
+            \end{pmatrix} = 0 \Rightarrow \begin{cases}
+                -2x_1 + x_2 + x_3 = 0\\
+                x_1 - 2x_2 + x_3 = 0\\
+                x_1 + x_2 - 2x_3 = 0
+            \end{cases}\\
+            &\Rightarrow x_1 = x_2 = x_3 = k\\
+            &\Rightarrow \textrm{Vector riêng } x = (x_1, x_2, x_3) = (k, k, k) = k(1,1,1)\\
+        \end{align*}
+        Tóm lại:
+        \begin{align*}
+            f'_1 = (1, 1, 1) &\Rightarrow f_1 = \left(\frac{1}{\sqrt{3}},\frac{1}{\sqrt{3}},\frac{1}{\sqrt{3}}\right)\\
+            \begin{cases}
+                e_2 &= (-1, 1, 0)\\
+                e_3 &= (-1, 0, 1)    
+            \end{cases} &\Rightarrow \begin{cases}
+                f'_2 &= e_2 = (-1, 1, 0)\\
+                f'_3 &= -\frac{1}{2}e_2+ e_3 = \left(-\frac{1}{\sqrt{2}}, -\frac{1}{\sqrt{2}}, 1\right)
+            \end{cases}\\
+            &\Rightarrow \begin{cases}
+                f'_2 &= \left( -\frac{1}{\sqrt{2}}, -\frac{1}{\sqrt{2}}, 0 \right)\\
+                f'_3 &= \left( -\frac{1}{\sqrt{6}}, -\frac{1}{\sqrt{6}}, \frac{2}{\sqrt{6}} \right)
+            \end{cases}\\
+            Te=f \Rightarrow \begin{matrix}
+                (1,0,0) \left(\frac{1}{\sqrt{3}},\frac{1}{\sqrt{3}},\frac{1}{\sqrt{3}}\right)\\
+                (0,1,0) \left( -\frac{1}{\sqrt{3}}, \frac{1}{\sqrt{2}}, 0 \right)\\
+                (0,0,1) \left( -\frac{1}{\sqrt{6}}, -\frac{1}{\sqrt{6}}, \frac{2}{\sqrt{6}} \right) 
+            \end{matrix}&\Rightarrow T = \begin{pmatrix}
+                \frac{1}{\sqrt{3}} & \frac{1}{\sqrt{3}} & \frac{1}{\sqrt{3}}\\
+                -\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} & 0\\
+                -\frac{1}{\sqrt{6}} & -\frac{1}{\sqrt{6}} & \frac{2}{\sqrt{6}}\\
+            \end{pmatrix}\\
+        \end{align*}
+        \begin{align*}
+            \Rightarrow (x) &= (x')T\\
+            (x_1, x_2, x_3) &= (u_1, u_2, u_3)T\\
+            \Rightarrow w(x) &= 2u_1^2 - u_2^2 - 3u_3^2
+        \end{align*}
+        \item $w(x) = \lambda_1u_1^2 + \lambda_2u_2^2 + \lambda_3u_3^2$
+        \item $w(x) = 2u_1^2 - u_2^2 - u_3^2 = (u_1u_2u_3)T$
+    \end{enumerate}
+    \item \textbf{Tính:}\\
+    \begin{align*}
+        L (x, \lambda) &= f(x) + \lambda^Tg(x) = 0.5x_1^2 + 2.5x_2^2 + \lambda(x_1-x_2-1)\\
+        \nabla L (x, \lambda) &= \begin{bmatrix}
+            x_1 + \lambda\\
+            5x_2 - \lambda\\
+            x_1 - x_2 - 1
+        \end{bmatrix}\Rightarrow \begin{cases}
+            x_1 + \lambda = 0\\
+            5x_2 - \lambda = 0\\
+            x_1 - x_2 - 1 = 0
+        \end{cases} \Rightarrow \begin{cases}
+            x_1 = \frac{5}{6}\\
+            x_2 = -\frac{1}{6}\\
+            \lambda = -\frac{5}{6}
+        \end{cases}\\
+        \nabla^2 L (x, \lambda) &= \begin{pmatrix}
+            \lambda & 0 & 1\\
+            0 & -\lambda & -1\\
+            1 & -1 & 0
+        \end{pmatrix}\\
+    \end{align*}
+\end{enumerate}
+
+
+
+
+
